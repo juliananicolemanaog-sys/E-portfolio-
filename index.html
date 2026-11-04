@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TCU Field Study 1 &amp; 2 E-Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--mr:#8b0000;--mrd:#4d0000;--gn:#0b4a2a;--gnd:#0c2a1b;--gd:#d4af37;--gdl:#f5d76e;--mt:#5de0b0;--cr:#fbf4dc;--cr2:#f3e7c3;--or:#f59e0b;--ink:#2a1a14;--mut:#7a6a58;--ln:#e2cf8f;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:15px/1.55 Inter,system-ui,sans-serif;color:var(--ink);background:linear-gradient(135deg,#f6e9e4,#f6edc9 55%,#e7dfa8);min-height:100vh}
+.serif,h1,h2,h3{font-family:"Playfair Display",Georgia,serif}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top,0px));background:linear-gradient(90deg,#8b0000,#4d0000 55%,#0b4a2a);border-bottom:3px solid var(--gd);box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.lgo{width:46px;height:46px;border-radius:50%;border:2px solid var(--gd);display:grid;place-items:center;color:#fff;font:700 .95rem "Playfair Display",serif;flex:none}
+.tt{flex:1;min-width:0}.tt b{display:block;color:var(--gdl);font:700 1.1rem "Playfair Display",serif;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tt span{color:#f4ead0;font-size:.82rem}
+.tb{display:flex;gap:8px;flex:none}
+.tb button,.tb label{font:600 .85rem Inter,sans-serif;border-radius:8px;padding:9px 14px;cursor:pointer;border:1px solid var(--gd);color:#fff;display:inline-flex;align-items:center;gap:6px}
+.sv{background:linear-gradient(#f59e0b,#d97706);color:#2a1500!important;border-color:#fbbf24!important}
+.ex{background:rgba(11,74,42,.7)}.im{background:rgba(139,0,0,.7)}
+.layout{max-width:1200px;margin:0 auto;padding:20px 16px 70px;display:grid;grid-template-columns:260px 1fr;gap:22px;align-items:start}
+.side{position:sticky;top:96px;background:linear-gradient(#fff9e8,var(--cr));border:2px solid var(--gd);border-radius:18px;padding:16px}
+.side h4{margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--ln);display:flex;justify-content:space-between;align-items:center;font:700 1rem "Playfair Display",serif;color:var(--mr);font-variant:small-caps}
+.side h4 i{font:700 .7rem Inter;font-style:normal;background:var(--gn);color:#fff;border-radius:999px;padding:4px 10px}
+.nv{display:flex;gap:10px;align-items:center;width:100%;text-align:left;border:0;background:transparent;font:500 .92rem Inter,sans-serif;color:var(--ink);padding:10px;border-radius:10px;cursor:pointer}
+.nv b{flex:none;width:24px;height:24px;border-radius:50%;background:var(--cr2);color:var(--gn);display:grid;place-items:center;font-size:.75rem}
+.nv:hover{background:#fdecb4}.nv.on{background:var(--mr);color:#fff;box-shadow:0 3px 8px rgba(139,0,0,.3)}.nv.on b{background:var(--gd);color:var(--mrd)}
+.main{background:linear-gradient(#fffdf5,var(--cr));border:2px solid var(--gd);border-radius:18px;padding:26px;min-width:0;box-shadow:0 10px 30px rgba(77,0,0,.12)}
+.pane{display:none}.pane.on{display:block}
+.pane>h2{display:flex;align-items:center;gap:12px;margin:0 0 16px;font-size:1.5rem;color:var(--mr);padding-bottom:10px;border-bottom:2px solid var(--gd)}
+.pane>h2 span{width:36px;height:36px;border-radius:50%;background:var(--mr);color:var(--gdl);display:grid;place-items:center;font-size:1rem;flex:none}
+.hdr{text-align:center;padding-bottom:18px;border-bottom:2px solid var(--gd);margin-bottom:18px}
+.hdr .a{font:600 .8rem Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--gn)}
+.hdr .b{font:800 1.9rem "Playfair Display",serif;color:var(--mr);line-height:1.2}
+.hdr .c{font-size:.88rem}.hdr .d{font:700 1rem "Playfair Display",serif;letter-spacing:.08em;text-transform:uppercase;color:var(--gn)}
+.pill{display:inline-block;margin:8px 0;background:#f8ddd0;border:1px solid var(--gd);color:var(--mr);font:700 .75rem Inter;letter-spacing:.06em;padding:7px 18px;border-radius:999px}
+.ttl{font:800 2.1rem/1.15 "Playfair Display",serif;margin:6px 0 4px;text-align:center}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.full{grid-column:1/-1}
+.fld>label{display:block;font:600 .72rem Inter;color:var(--mut);margin-bottom:4px;text-transform:uppercase;letter-spacing:.07em}
+.f{background:#fffdf6;border:1px solid var(--ln);border-radius:10px;padding:9px 12px;min-height:2.6em;outline:none;white-space:pre-wrap;word-break:break-word;transition:.15s}
+.f.tall{min-height:7.5em}.f.nm{font:700 1.2rem Inter;color:var(--mr);text-transform:uppercase}
+[contenteditable]:focus{border-color:var(--mr);box-shadow:0 0 0 3px rgba(212,175,55,.35)}
+[contenteditable]:empty::before{content:attr(data-ph);color:var(--mut);opacity:.65}
+.pp,.lg{border:3px solid var(--gd);border-radius:10px;background:var(--mr) center/cover no-repeat;color:#fff;display:flex;align-items:flex-end;justify-content:center;text-align:center;font:600 .85rem Inter;padding:10px;cursor:pointer}
+.pp{width:150px;height:185px}.lg{width:84px;height:84px;font-size:.62rem;display:grid;place-items:center;border-radius:50%}
+.has span{display:none}
+.card{position:relative;border:1px solid var(--gd);background:#fffdf6;border-radius:14px;padding:16px;margin-bottom:16px}
+.card:focus-within{box-shadow:0 0 0 3px rgba(212,175,55,.3)}
+.card>.x{position:absolute;top:10px;right:12px}
+.x{font:600 .74rem Inter;border:0;background:transparent;color:var(--mut);cursor:pointer}.x:hover{color:var(--mr)}
+.btn{font:700 .82rem Inter;border:1px solid var(--gd);background:linear-gradient(90deg,var(--mr),var(--gn));color:var(--gdl);border-radius:999px;padding:9px 18px;cursor:pointer;display:inline-block}
+.btn:hover{filter:brightness(1.15)}
+.photos{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start}
+.photos figure{margin:0;width:150px;position:relative}
+.photos img{width:100%;height:110px;object-fit:cover;border-radius:8px;border:2px solid var(--gd);display:block}
+.photos figure.w{width:min(100%,420px)}.photos figure.w img{height:auto;max-height:260px;object-fit:contain;background:#fff}
+.photos figure .x{position:absolute;top:4px;right:4px;background:rgba(77,0,0,.8);color:#fff;border-radius:50%;width:20px;height:20px;padding:0}
+figcaption{font-size:.78rem;padding:4px 2px;outline:none}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:560px}
+th{font:700 .72rem Inter;text-align:left;padding:9px;background:var(--mr);color:var(--gdl);text-transform:uppercase;letter-spacing:.06em}
+td{border:1px solid var(--ln);padding:8px 10px;vertical-align:top;outline:none;min-width:110px;background:#fffdf6}
+.apps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.apps li{border:1px solid var(--gd);border-radius:12px;padding:10px 12px;background:#fffdf6}
+.apps b{display:block;font:600 .85rem Inter;color:var(--gn);margin-bottom:5px}
+.pager{display:flex;justify-content:space-between;margin-top:22px;padding-top:14px;border-top:1px solid var(--ln)}
+.cover{position:fixed;inset:0;z-index:50;overflow:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 18px;background:radial-gradient(rgba(212,175,55,.25) 1px,transparent 1.5px) 0 0/26px 26px,linear-gradient(120deg,#8b0000,#3a0b0b 45%,#0d2a1c 75%,#0b4a2a);transition:opacity .4s}
+.cover.out{opacity:0;pointer-events:none}
+.logo{border-radius:50%;background:#fff;object-fit:cover;flex:none;display:block}.cl{width:min(190px,42vw);height:min(190px,42vw);border:5px solid var(--gd);box-shadow:0 0 0 4px rgba(0,0,0,.35),0 10px 30px rgba(0,0,0,.45)}.tl{width:46px;height:46px;border:2px solid var(--gd)}
+.badge{width:150px;height:150px;border-radius:50%;border:6px solid var(--gd);background:radial-gradient(circle,#7a0000,#102a1c);display:grid;place-items:center;color:#fff;font:700 .85rem "Playfair Display",serif;letter-spacing:.14em;box-shadow:0 0 0 6px #120a08 inset}
+.cover h1{margin:18px 0 8px;font-size:clamp(1.8rem,6vw,3.6rem);color:var(--gdl);letter-spacing:.02em;line-height:1.1}
+.cover .sub{color:var(--mt);font:600 clamp(.75rem,2.4vw,1.05rem) Inter;letter-spacing:.14em;text-transform:uppercase}
+.cc{margin-top:26px;max-width:640px;background:linear-gradient(135deg,#f4eee2,#ddd5b6);border:3px solid var(--gd);border-radius:26px;padding:26px 24px}
+.cc h3{margin:0 0 10px;color:var(--mr);font-size:clamp(1.1rem,3.6vw,1.8rem);text-transform:uppercase}
+.cc p{margin:0 0 18px;font-style:italic;color:#4a4036}
+.enter{font:700 .95rem Inter;text-transform:uppercase;color:var(--gdl);background:linear-gradient(90deg,var(--mr),var(--gn));border:1px solid var(--gd);border-radius:999px;padding:14px 28px;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.3)}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--gnd);color:var(--gdl);border:1px solid var(--gd);padding:10px 18px;border-radius:999px;font:600 .85rem Inter;opacity:0;transition:.3s;z-index:60;pointer-events:none}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:860px){
+ .layout{grid-template-columns:1fr;padding:12px 10px 70px;gap:12px}
+ .side{position:sticky;top:calc(66px + env(safe-area-inset-top,0px));z-index:10;padding:8px;border-radius:14px;display:flex;overflow-x:auto;gap:4px}
+ .side h4{display:none}.nv{width:auto;flex:none;white-space:nowrap;padding:8px 12px}
+ .main{padding:16px 14px}.grid,.apps{grid-template-columns:1fr}.tt span{display:none}
+ .tb button,.tb label{padding:8px 10px;font-size:.75rem}.hdr .b{font-size:1.4rem}.ttl{font-size:1.5rem}
+}
+@media(max-width:480px){.tb .t{display:none}.tl{width:38px;height:38px}}
+.cover{padding-top:68px}
+.ce{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:14px;left:14px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;z-index:2}
+.cb{font:600 .78rem Inter,sans-serif;color:var(--gdl);background:rgba(0,0,0,.5);border:1px solid var(--gd);border-radius:999px;padding:8px 14px;cursor:pointer;display:inline-flex;align-items:center}
+.ce .hint,.ce label.cb{display:none}.hint{font:500 .78rem Inter,sans-serif;color:#fff;align-self:center}
+.editing .ce .hint{display:inline}.editing .ce label.cb{display:inline-flex}
+.edb{display:none}.editing .edb{display:inline-block;cursor:text}.editing .enter:not(.edb){display:none}
+.editing [data-e]{outline:2px dashed var(--gdl);outline-offset:4px;cursor:text;min-width:2ch}
+.editing [data-e]:focus{outline-style:solid;box-shadow:none}
+.btn.sm{padding:6px 14px;font-size:.76rem}.fld>.photos{margin-top:8px}
+.fld.cf{position:relative;border:1px dashed var(--gd);border-radius:12px;padding:12px;background:rgba(255,253,246,.6)}
+.fld.cf>.x{position:absolute;top:8px;right:10px}
+.fld.cf>label{display:inline-block;min-width:10ch;outline:none;border-bottom:1px dashed var(--ln);color:var(--mr);cursor:text}
+.fld.cf>label:empty::before{content:attr(data-ph)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:600 .75rem Inter,sans-serif;border:1px solid var(--gd);background:#fffdf6;color:var(--mut);border-radius:999px;padding:6px 12px;cursor:pointer;text-decoration:line-through}
+.chip.on{background:var(--gn);color:#fff;border-color:var(--gn);text-decoration:none}
+.note.sched{background:#fff3d1;border:1px solid var(--gd);border-radius:10px;padding:10px 14px;font-size:.88rem;margin:0 0 14px}
+.pp.lgx{width:170px;height:170px;background-color:#fff;background-size:contain;border-radius:12px}
+.dr{border:1px solid var(--gd);background:#fffbe9;border-radius:12px;padding:12px;margin-top:10px}
+.dr h4{margin:0 0 10px;color:var(--mr);font:700 1.05rem "Playfair Display",Georgia,serif}
+.dr .btn{margin-top:10px}.chip.sel{box-shadow:0 0 0 3px rgba(212,175,55,.6)}
+.goto{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 14px;font:600 .82rem Inter,sans-serif}
+.goto input{font:inherit;padding:7px 10px;border:1px solid var(--gd);border-radius:8px;background:#fffdf6}
+.mdl{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.55);display:grid;place-items:center;padding:16px}.mdl[hidden]{display:none}
+.mb{background:#fffdf5;border:2px solid var(--gd);border-radius:16px;padding:20px;max-width:420px;width:100%;display:flex;flex-direction:column;gap:8px}
+.mb h3{margin:0;color:var(--mr)}.mb p{margin:0}.mb small{color:var(--mut);margin:0 0 6px}.mb .btn{text-align:center}
+.pp.ps{width:120px;height:140px;margin-top:8px}
+.me{margin-top:20px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.mp{width:170px;height:220px;position:relative;z-index:0;display:grid;place-items:center}
+.mph{max-width:100%;max-height:100%;object-fit:contain;transform-origin:center;user-select:none;-webkit-user-drag:none;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.me.adj .mp{outline:2px dashed var(--gdl);outline-offset:4px;cursor:grab;touch-action:none}
+.mt{display:flex;flex-direction:column;align-items:center;gap:8px;z-index:3;position:relative}
+.mtl{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center}.mtl[hidden],.mt [hidden]{display:none}
+.cb.sz{gap:8px}.cb.sz input{width:110px;accent-color:#f5d76e}
+.mn{font:800 clamp(1.1rem,3.6vw,1.7rem) "Playfair Display",Georgia,serif;color:var(--gdl);letter-spacing:.05em}
+.mc{color:#f4ead0;font:500 .9rem Inter,sans-serif}
+.cover h1,.cover .sub,.cover .mn,.cover .mc,.cover .cc,.cover img.cl{position:relative;z-index:1}
+.cover h1,.cover .sub,.cover .mn,.cover .mc{pointer-events:none;text-shadow:0 2px 10px rgba(0,0,0,.65)}
+.cover .mt{position:relative;z-index:3}
+.cover:has(.me.adj) .cc,.cover:has(.me.adj) img.cl{pointer-events:none}
+.padj,.me .pctl{display:none!important}
+.photos figure.m{width:calc(50% - 6px);max-width:260px}.photos figure.m img{height:150px}.photos figure.m figcaption{min-height:1.6em;border-bottom:1px dashed var(--ln);font-weight:600}
+.photos figure.c{width:min(100%,300px)}.photos figure.c img{height:auto;object-fit:contain;background:#fff;border:1px solid var(--gd)}
+.cover .mt{display:none!important}
+.cover .mn,.cover .mc{background:none;border:0;border-radius:0;padding:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+.cover .mn{color:#fff;font-weight:800;letter-spacing:.06em;text-shadow:0 1px 3px rgba(0,0,0,.95),0 0 10px rgba(0,0,0,.7)}
+.cover .mc{color:#fff3c4;font-weight:700;font-size:.95rem;text-shadow:0 1px 3px rgba(0,0,0,.95),0 0 10px rgba(0,0,0,.7)}
+.card.certc{padding-top:34px}
+.photos.pcert figure{width:min(100%,380px)}
+.photos.pcert figure img{height:auto;max-height:none;object-fit:contain;background:#fff;border:1px solid var(--gd)}
+.photos.pcert figcaption{font-weight:600;text-align:center;border-bottom:1px dashed var(--ln)}
+.pfld{display:flex;flex-direction:column;align-items:center;text-align:center}
+.pfld>label:first-child{text-align:center}
+.pfld .pp{width:min(300px,82vw);height:min(380px,104vw);margin:6px auto 0;border:3px solid var(--gd);border-radius:14px}
+.pname{margin-top:12px;font:800 clamp(1.15rem,4vw,1.6rem) "Playfair Display",Georgia,serif;color:var(--mr);letter-spacing:.05em;text-transform:uppercase;text-align:center}
+.photos.pcert,#weeks .photos,.dr .photos{justify-content:center}
+#weeks .photos figure,.dr .photos figure{width:min(100%,260px)}
+#weeks .photos figure img,.dr .photos figure img{height:180px;object-fit:cover}
+#weeks figcaption,.dr figcaption,.photos.pcert figcaption{text-align:center}
+.fld.pfld2{display:flex;flex-direction:column;align-items:center;text-align:center}
+.fld.pfld2>.f{width:100%;text-align:center}
+.fld.pfld2 .pp.ps{width:min(300px,82vw);height:min(380px,104vw);margin:10px auto 0;border:3px solid var(--gd);border-radius:14px}
+.fld.pfld2>label:first-child{order:0}
+.fld.pfld2>.pp{order:1}
+.fld.pfld2>.f{order:2;margin-top:12px;background:transparent;border:0;border-bottom:1px dashed var(--ln);border-radius:0;font:800 clamp(1.1rem,3.8vw,1.5rem) "Playfair Display",Georgia,serif;color:var(--mr);letter-spacing:.04em}
+.fld.lfld{display:flex;flex-direction:column;align-items:center;text-align:center}
+.fld.lfld .pp.lgx{margin:6px auto 0}
+.note.ent{background:#fff3d1;border:1px solid var(--gd);border-radius:10px;padding:10px 14px;font-size:.88rem;margin:12px 0}
+.card.certc>.grid{margin-top:2px}
+.apps{grid-auto-flow:column;grid-template-rows:repeat(4,auto)}
+.apps li .photos{margin-top:8px}
+@media(max-width:860px){.apps{grid-auto-flow:row;grid-template-rows:none}}
+.photos{justify-content:center}.photos figure{text-align:center}
+.fld.pfld2{grid-column:1/-1}.fld.pfld2 .pp.ps{align-self:center}
+.photos figure.org{width:min(100%,460px)}.photos figure.org img{height:auto;max-height:none;object-fit:contain;background:#fff;border:1px solid var(--gd)}
+@media print{.topbar,.side,.cover,.pager,.btn,.x,#toast{display:none!important}.pane{display:block!important;page-break-after:always}.layout{display:block}.main{border:0;box-shadow:none}}
+.cvbox{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.cvlink{display:inline-flex;align-items:center;gap:8px;font:700 .95rem Inter,sans-serif;color:var(--mr);background:#fff3d1;border:1px solid var(--gd);border-radius:12px;padding:10px 16px;text-decoration:underline;word-break:break-all}
+.cvlink:hover{background:#fdecb4}
+.cvnone{color:var(--mut);font-size:.88rem}
+.cvbtns{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.cvbtns .btn{margin:0}
+.cvrow{display:flex;flex-wrap:wrap;gap:8px;width:100%}.cvrow[hidden]{display:none}
+.cvrow input{flex:1;min-width:200px;font:inherit;padding:9px 12px;border:1px solid var(--gd);border-radius:10px;background:#fffdf6}
+.cvdel{font:600 .78rem Inter,sans-serif;border:0;background:transparent;color:var(--mut);cursor:pointer;text-decoration:underline}.cvdel:hover{color:var(--mr)}
+.ro [data-att]{display:none!important}
+.ro .pp,.ro .lg{cursor:default}.ro .pp span{display:none}
+.ro .photos figure img{cursor:zoom-in}
+.photos figure.doc{width:min(100%,380px)}.photos figure.doc img{height:auto;max-height:none;object-fit:contain;background:#fff;border:1px solid var(--gd)}
+.photos figure.doc.nr{width:min(30%,200px);min-width:150px}
+.apps li .photos{justify-content:center}
+.cvlink{cursor:pointer}.cvnew{font:600 .85rem Inter,sans-serif;color:var(--gn);margin-left:4px}
+.cvbox{flex-direction:row;flex-wrap:wrap;align-items:center}
+#lb{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto;cursor:zoom-out}
+#lb[hidden]{display:none}
+#lb img{max-width:100%;max-height:100%;object-fit:contain;background:#fff;border-radius:6px}
+#lbx{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:14px;width:40px;height:40px;border-radius:50%;border:1px solid var(--gd);background:rgba(0,0,0,.6);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
+.ro .f{cursor:default}
+</style>
+</head>
+<body>
+<div class="cover" id="cover">
+ <img class="logo cl" alt="Taguig City University seal">
+ <h1 data-e="title">TAGUIG CITY UNIVERSITY</h1>
+ <div class="sub" data-e="sub">College of Innovative Learning and Teaching &bull; Field Study 1 &amp; 2</div>
+ <div class="me">
+  <div class="mp"><img class="mph" alt="Juliana Nicole Manaog" draggable="false" src="assets1/img001.png"></div>
+  <div class="mt"><button class="cb" data-padj>✎ Adjust photo</button>
+   <div class="mtl" hidden><label class="cb">Change photo<input type="file" accept="image/png,image/*" hidden data-c="cp"></label><label class="cb sz">Size <input type="range" min="50" max="200" value="100" id="psz"></label><button class="cb" data-prst>Reset</button><button class="cb" data-pdone>✓ Done</button></div></div>
+  <div class="mn">JULIANA NICOLE MANAOG</div>
+  <div class="mc">Bachelor of Secondary Education &middot; Major in Science</div>
+ </div>
+ <div class="cc"><h3 data-e="head">Official Experiential Learning E-Portfolio</h3>
+  <p data-e="desc">A systematic and reflective documentation of Field Study 1 and 2 experiences, including classroom observations, teaching assistantship, learning evidences, and professional growth.</p>
+  <button class="enter" data-act="enter"><span>Touch / Click to enter portfolio</span></button></div>
+</div>
+<div class="topbar">
+ <img class="logo tl" alt="TCU seal">
+ <div class="tt"><b>TAGUIG CITY UNIVERSITY</b><span>College of Innovative Learning and Teaching &bull; Field Study E-Portfolio</span></div>
+</div>
+<div class="layout">
+ <nav class="side"><h4>Navigation <i>FS 1 &amp; 2</i></h4><div id="nav"></div></nav>
+ <main class="main" id="app"></main>
+</div>
+<div id="toast"></div>
+
+<script>window.IMGDB={"fac861": "assets1/img002.jpg", "fac860": "assets1/img003.jpg", "fac859": "assets1/img004.jpg", "fac858": "assets1/img005.jpg", "fac854": "assets1/img006.jpg", "fac855": "assets1/img007.jpg", "fac856": "assets1/img008.jpg", "fac857": "assets1/img009.jpg", "fac853": "assets1/img010.jpg", "fac852": "assets1/img011.jpg", "fac851": "assets1/img012.jpg", "fac850": "assets1/img013.jpg", "cert1": "assets1/img014.jpg", "cert2": "assets1/img015.jpg", "d16c": "assets1/img016.jpg", "d17a": "assets1/img017.jpg", "d17b": "assets1/img018.jpg", "d16d": "assets1/img019.jpg", "d16e": "assets1/img020.jpg", "d17c": "assets1/img021.jpg", "d17d": "assets1/img022.jpg", "d17e": "assets1/img023.jpg", "d17f": "assets1/img024.jpg", "p10_1": "assets1/img025.jpg", "p11_1": "assets1/img026.jpg", "p12_1": "assets1/img027.jpg", "p13_1": "assets1/img028.jpg", "p14_1": "assets1/img029.jpg", "p15_1": "assets1/img030.jpg", "p16_1": "assets1/img031.jpg", "p17_1": "assets1/img032.jpg", "p17_2": "assets1/img033.jpg", "p18_1": "assets1/img034.jpg", "p19_1": "assets1/img035.jpg", "p19_2": "assets1/img036.jpg", "p20_1": "assets1/img037.jpg", "p20_2": "assets1/img038.jpg", "p21_1": "assets1/img039.jpg", "p21_2": "assets1/img040.jpg", "p22_1": "assets1/img041.jpg", "p22_2": "assets1/img042.jpg", "p23_1": "assets1/img043.jpg", "p24_1": "assets1/img035.jpg", "p24_2": "assets1/img044.jpg", "p25_1": "assets1/img045.jpg", "p25_2": "assets1/img046.jpg", "p26_1": "assets1/img047.jpg", "p26_2": "assets1/img048.jpg", "p27_1": "assets1/img049.jpg", "p28_1": "assets1/img050.jpg", "p28_2": "assets1/img051.jpg", "p29_1": "assets1/img052.jpg", "p2_1": "assets1/img053.jpg", "p30_1": "assets1/img054.jpg", "p31_1": "assets1/img055.jpg", "p32_1": "assets1/img056.jpg", "p33_1": "assets1/img057.jpg", "p34_1": "assets1/img058.jpg", "p35_1": "assets1/img059.jpg", "p36_1": "assets1/img060.jpg", "p37_1": "assets1/img061.jpg", "p38_1": "assets1/img062.jpg", "p39_1": "assets1/img063.jpg", "p40_1": "assets1/img064.jpg", "p41_1": "assets1/img065.jpg", "p41_2": "assets1/img066.jpg", "p42_1": "assets1/img067.jpg", "p43_1": "assets1/img068.jpg", "p44_1": "assets1/img069.jpg", "p45_1": "assets1/img070.jpg", "p46_1": "assets1/img071.jpg", "p47_1": "assets1/img072.jpg", "p48_1": "assets1/img073.jpg", "p49_1": "assets1/img074.jpg", "p49_2": "assets1/img075.jpg", "p4_1": "assets1/img076.jpg", "p50_1": "assets1/img077.jpg", "p51_1": "assets1/img078.jpg", "p52_1": "assets2/img079.jpg", "p53_1": "assets2/img080.jpg", "p54_1": "assets2/img081.jpg", "p55_1": "assets2/img082.jpg", "p56_1": "assets2/img083.jpg", "p57_1": "assets2/img084.jpg", "p58_1": "assets2/img085.jpg", "p59_1": "assets2/img086.jpg", "p5_1": "assets2/img087.jpg", "p60_1": "assets2/img088.jpg", "p61_1": "assets2/img089.jpg", "p62_1": "assets2/img090.jpg", "p63_1": "assets2/img091.jpg", "p64_1": "assets2/img092.jpg", "p6_1": "assets2/img093.jpg", "p7_1": "assets2/img094.jpg", "p8_1": "assets2/img095.jpg", "p9_1": "assets2/img096.jpg", "a": "assets2/img097.jpg", "b": "assets2/img098.jpg", "d16a": "assets2/img099.jpg", "d16b": "assets2/img100.jpg", "fac942": "assets2/img101.jpg", "cert3": "assets2/img102.jpg", "cert4": "assets2/img103.jpg", "cert5": "assets2/img104.jpg", "cert6": "assets2/img105.jpg", "cert7": "assets2/img106.jpg"};</script>
+<script>Object.assign(window.IMGDB,{"jr0": "assets2/img107.jpg", "jr1": "assets2/img108.jpg", "jr2": "assets2/img109.jpg", "jr3": "assets2/img110.jpg", "jr4": "assets2/img111.jpg", "jr5": "assets2/img112.jpg", "jr6": "assets2/img113.jpg", "jr7": "assets2/img114.jpg", "jr8": "assets2/img115.jpg", "jr9": "assets2/img116.jpg", "jr10": "assets2/img117.jpg", "jr11": "assets2/img118.jpg", "jr12": "assets2/img119.jpg", "jr13": "assets2/img120.jpg", "jr14": "assets2/img121.jpg", "jr15": "assets2/img122.jpg", "jr16": "assets2/img123.jpg", "jr17": "assets2/img124.jpg", "jr18": "assets2/img125.jpg", "org1": "assets2/img126.jpg"});</script>
+<script>Object.assign(window.IMGDB,{"cert8": "assets2/img127.jpg", "cert9": "assets2/img128.jpg", "cert10": "assets2/img129.jpg", "cert11": "assets2/img130.jpg", "cert12": "assets2/img131.jpg", "cert13": "assets2/img132.jpg"});</script>
+<script>Object.assign(window.IMGDB,{"cv1": "assets2/img133.jpg", "d22a": "assets2/img134.jpg", "d22b": "assets2/img135.jpg", "d26a": "assets2/img136.jpg", "d26b": "assets2/img137.jpg", "d26c": "assets2/img138.jpg", "d27a": "assets2/img139.jpg", "d27b": "assets2/img140.jpg", "d28a": "assets2/img141.jpg", "d28b": "assets2/img142.jpg", "d29a": "assets2/img143.jpg", "d29b": "assets2/img144.jpg", "ap_eval": "assets2/img145.jpg", "ap_end": "assets2/img146.jpg", "ap_dtr1": "assets2/img147.jpg", "ap_dtr2": "assets2/img148.jpg", "ap_dtr3": "assets2/img149.jpg"});</script>
+<script>
+var LOGO='assets2/img150.jpg';document.querySelectorAll('img.logo').forEach(function(i){i.src=LOGO});
+document.getElementById('cover').style.background="radial-gradient(rgba(212,175,55,.22) 1px,transparent 1.5px) 0 0/26px 26px,linear-gradient(120deg,rgba(139,0,0,.80),rgba(58,11,11,.74) 45%,rgba(13,42,28,.78) 75%,rgba(11,74,42,.86)),url('assets2/img151.jpg') center/cover no-repeat";
+try{Object.keys(localStorage).forEach(function(k){if(k.indexOf('tcu-fs')===0)localStorage.removeItem(k)})}catch(e){}
+var KEY='tcu-fs-eportfolio-v4',app=document.getElementById('app');
+var T=['Introduction','Student Profile','Learning Goals','Cooperating School Profile','Weekly Documentation and Reflection','Professional Development and Activities','Professional Growth Action Plan','Appendices'];
+var f=function(l,p,v,w){return '<div class="fld '+(w||'')+'"><label>'+l+'</label><div class="f '+(/tall/.test(w||'')?'tall':'')+'" contenteditable="true" data-ph="'+p+'">'+(v||'')+'</div></div>'};
+var ph=function(l){return '<div class="fld full"><label>'+l+'</label><div class="photos"><label class="btn">+ Add photo<input type="file" accept="image/*" multiple hidden></label></div></div>'};
+var week=function(){return '<article class="card"><button class="x" data-del>Remove week</button><div class="grid">'+
+ f('Week Number and Date','e.g., Week 1 \u2013 January 12, 2026','','full')+f('Learning Objectives','What did you aim to learn this week?','','full tall')+
+ f('Classroom Observations (Field Study 1)','Describe what you observed in the classroom','','full tall')+
+ f('Participation and Assigned Tasks (Field Study 2)','Tasks you took part in or were assigned','','full tall')+
+ f('Learning Evidences','Lesson plans, worksheets, outputs, notes\u2026','','full tall')+ph('Photo Documentation with Captions')+
+ f('Weekly Reflection','What did you learn, feel, and plan to improve?','','full tall')+'</div></article>'};
+var pd=function(){return '<article class="card"><button class="x" data-del>Remove entry</button><div class="grid">'+
+ f('a. Title of the Activity','Seminar, webinar, workshop, mock board exam\u2026')+f('b. Date','Date of the activity')+
+ f('c. Brief Description','What was the activity about?','','full tall')+f('d. Reflection','Key takeaways and how it helps your growth as a future teacher','','full tall')+
+ ph('e. Photo Documentation')+f('f. Certificates and Recognitions','Certificate title, issuer, link or file name','','full')+'</div></article>'};
+var row=function(){return '<tr><td contenteditable="true" data-ph="Area"></td><td contenteditable="true" data-ph="Action"></td><td contenteditable="true" data-ph="Timeline"></td><td contenteditable="true" data-ph="Outcome"></td><td><button class="x" data-del>\u00d7</button></td></tr>'};
+var apps=['Observation Forms','Attendance Records','School Forms (if permitted)','Endorsement or Acceptance Letter (if applicable)','Approved Class or Observation Schedule','Observation Notes or Field Notes','Feedback or Evaluation Forms','Consent Forms (if applicable)'];
+var tpl={weeks:week,pds:pd,rows:row};
+
+function pane(i,h){return '<section class="pane"><h2><span>'+(i+1)+'</span>'+T[i]+'</h2>'+h+
+ '<div class="pager"><div>'+(i?'<button class="btn" data-go="'+(i-1)+'">\u2190 Previous</button>':'')+'</div><div>'+(i<7?'<button class="btn" data-go="'+(i+1)+'">Next \u2192</button>':'')+'</div></div></section>'}
+function build(){
+ app.innerHTML=[
+ '<div class="hdr"><div class="a">Republic of the Philippines</div><div class="a">City of Taguig</div><div class="b" contenteditable="true">TAGUIG CITY UNIVERSITY</div><div class="c" contenteditable="true">Gen. Santos Avenue, Central Bicutan, Taguig City &middot; ced@tcu.edu.ph</div><div class="d" contenteditable="true">College of Innovative Learning and Teaching</div><span class="pill">EXPERIENTIAL LEARNING COURSE</span><div class="ttl" contenteditable="true">FIELD STUDY 1 &amp; 2 E-PORTFOLIO</div></div>'+f('Short Introduction about the Portfolio','Briefly introduce your portfolio and its purpose\u2026','','full tall'),
+ '<div class="grid"><div class="fld full"><label>Professional Photo</label><label class="pp"><input type="file" accept="image/*" hidden><span>Upload Photo</span></label></div>'+
+ f('Full Name','Full name','Juliana Nicole Manaog','nm')+f('Student Number','Student number')+
+ f('Program and Major','Program and major','Bachelor of Secondary Education, Major in Science')+f('Academic Year','e.g., 2026\u20132027')+
+ f('Course Code and Course Title','e.g., FS 1 \u2013 Observation of Teaching-Learning in Actual School Environment')+f('Field Study Adviser','Adviser name')+
+ f('Cooperating School','School name')+f('Cooperating Teacher','Teacher name')+
+ f('Brief Biography','Tell your story in a few sentences\u2026','','full tall')+f('Personal Educational Philosophy','What do you believe about teaching and learning?','','full tall')+
+ f('Career Objectives','Your professional goals\u2026','','full tall')+f('Curriculum Vitae (PDF)','Paste the link or file name of your CV (PDF)','','full')+'</div>',
+ f('Personal learning goals and expectations for Field Study 1 and Field Study 2','State your goals and expectations\u2026','','full tall'),
+ '<div class="grid">'+f('School Profile','Name, location, type, population\u2026','','full tall')+f('Vision','School vision','','full tall')+f('Mission','School mission','','full tall')+f('Core Values','Core values','','full tall')+
+ f('Organizational Structure','Principal, department heads, teachers\u2026','','full tall')+f('School Facilities','Classrooms, laboratories, library, gym\u2026','','full tall')+ph('Photographs (where permitted)')+'</div>',
+ '<div id="weeks">'+week()+'</div><button class="btn" data-addwk>+ Add week</button>',
+ f('Overview','Participation in seminars, webinars, workshops, lecture series, conferences, mock board examinations, assemblies, extension programs, and other institutional events.','','full tall')+'<div id="pds" style="margin-top:14px">'+pd()+'</div><button class="btn" data-add="pds">+ Add activity</button>',
+ '<div class="tw"><table><thead><tr><th>Area for Improvement</th><th>Action Plan</th><th>Timeline</th><th>Expected Outcome</th><th></th></tr></thead><tbody id="rows">'+row()+row()+'</tbody></table></div><p><button class="btn" data-add="rows">+ Add row</button></p>',
+ '<p style="color:var(--mut);margin-top:0">Include additional supporting documents, such as:</p><ul class="apps">'+apps.map(function(a){return '<li><b>'+a+'</b><div class="f" contenteditable="true" data-ph="Link, file name, or notes"></div></li>'}).join('')+'</ul>'
+ ].map(function(h,i){return pane(i,h)}).join('');
+}
+function showTab(i){document.querySelectorAll('.pane').forEach(function(p,k){p.classList.toggle('on',k===i)});document.querySelectorAll('.nv').forEach(function(n,k){n.classList.toggle('on',k===i)});window.scrollTo({top:0})}
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove('on')},1800)}
+function snap(){var c=app.cloneNode(true);c.querySelectorAll('img[data-k]').forEach(function(im){if(window.IMGDB&&window.IMGDB[im.getAttribute('data-k')])im.removeAttribute('src')});return c.innerHTML}
+function hydrate(){app.querySelectorAll('img[data-k]').forEach(function(im){var u=window.IMGDB&&window.IMGDB[im.getAttribute('data-k')];if(u&&!im.getAttribute('src'))im.src=u})}
+function persist(){return true}
+var sT;function save(){clearTimeout(sT);sT=setTimeout(persist,500)}
+function load(){try{var s=localStorage.getItem(KEY)||(window.__SEED&&window.__SEED[KEY]);if(s){app.innerHTML=s;hydrate();return true}}catch(e){}return false}
+function readImg(file,cb){var r=new FileReader();r.onload=function(){cb(r.result)};r.readAsDataURL(file)}
+
+document.getElementById('nav').innerHTML=T.map(function(t,i){return '<button class="nv" data-tab="'+i+'"><b>'+(i+1)+'</b>'+t+'</button>'}).join('');
+document.addEventListener('change',function(e){var t=e.target;if(t.type!=='file'||t.id==='imp'||t.dataset.c||!t.files.length)return;
+ var box=t.closest('.photos'),slot=t.closest('.pp');
+ Array.prototype.forEach.call(t.files,function(file){readImg(file,function(url){
+  if(box){var fg=document.createElement('figure');fg.innerHTML='<img alt=""><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the picture"></figcaption>';fg.querySelector('img').src=url;box.insertBefore(fg,t.closest('label'))}
+  else if(slot){slot.style.backgroundImage='url('+url+')';slot.classList.add('has')}
+  save()})});t.value=''});
+document.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var d=b.dataset;
+ if(d.tab!==undefined)showTab(+d.tab);else if(d.go!==undefined)showTab(+d.go);
+ else if(d.add){document.getElementById(d.add).insertAdjacentHTML('beforeend',tpl[d.add]());save()}
+ else if(b.hasAttribute('data-del')){var el=b.closest('figure,tr,.cf,.card');if(el){el.remove();save()}}
+ else if(d.act==='enter')document.getElementById('cover').classList.add('out');
+  });
+document.addEventListener('input',save);
+document.addEventListener('paste',function(e){if(e.target.isContentEditable){e.preventDefault();document.execCommand('insertText',false,(e.clipboardData||window.clipboardData).getData('text'))}});
+var IMG1=IMGDB["a"],IMG2=IMGDB["b"];
+function applyTNHS(){
+ var P={"Cooperating School":"Taguig National High School","School Profile":"Taguig National High School (School ID: 305460) is a public secondary school under the Department of Education, located at A. Reyes St., New Lower Bicutan, Taguig City. Established in 1980, the school is guided by its motto, \u201cLooking Beyond the Horizon.\u201d","Vision":"We dream of Filipinos who passionately love their country and whose values and competencies enable them to realize their full potential and contribute meaningfully to building the nation. As a learner-centered public institution, the Department of Education continuously improves itself to better serve its stakeholders.","Mission":"To protect and promote the right of every Filipino to quality, equitable, culture-based, and complete basic education where:\n\u2022 Students learn in a child-friendly, gender-sensitive, safe, and motivating environment.\n\u2022 Teachers facilitate learning and constantly nurture every learner.\n\u2022 Administrators and staff, as stewards of the institution, ensure an enabling and supportive environment for effective learning to happen.\n\u2022 Family, community, and other stakeholders are actively engaged and share responsibility for developing life-long learners.","Core Values":"Maka-Diyos | Maka-tao | Makakalikasan | Makabansa"};
+ var box=null;
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector('label'),f=fl.querySelector('.f');if(!l)return;
+  if(f&&P[l.textContent]!==undefined)f.textContent=P[l.textContent];
+  if(l.textContent==='Photographs (where permitted)')box=fl.querySelector('.photos')});
+ if(box)[['a',IMG1,'School grounds with the flagpoles and the \u201cI \u2665 TNHS\u201d sign, Taguig National High School'],['b',IMG2,'Taguig National High School vision, mission, core values, and School ID 305460']].forEach(function(x){
+  if(box.querySelector('img[data-k="'+x[0]+'"]'))return;
+  var fg=document.createElement('figure');fg.className='w';fg.innerHTML='<img alt="" data-k="'+x[0]+'"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true"></figcaption>';
+  fg.querySelector('img').src=x[1];fg.querySelector('figcaption').textContent=x[2];box.insertBefore(fg,box.querySelector('label'))});
+}
+var UPK='tcu-fs-up-tnhs';
+var EX={
+"Short Introduction about the Portfolio":"This e-portfolio is a formal compilation of my observations, learning experiences, and reflections as a Bachelor of Secondary Education student majoring in Science, enrolled in Field Study 1 and Field Study 2. It documents classroom observations, participation in teaching assistantship, professional development activities, and evidences of learning that demonstrate my growth toward becoming a competent, reflective, and ethical science teacher.",
+"Student Number":"TCU-2023-01234",
+"Academic Year":"2026\u20132027",
+"Course Code and Course Title":"FS 1 \u2013 Observations of Teaching-Learning in Actual School Environment; FS 2 \u2013 Participation and Teaching Assistantship",
+"Field Study Adviser":"Dr. Ana R. Reyes",
+"Cooperating School":"Central Bicutan National High School",
+"Cooperating Teacher":"Mrs. Maria L. Santos, Science Department",
+"Brief Biography":"I am Juliana Nicole Manaog, a consistent honor student of the College of Innovative Learning and Teaching at Taguig City University. I am pursuing a Bachelor of Secondary Education major in Science and have a strong interest in environmental science and research, as shown by my undergraduate thesis on the use of Lemna minor (duckweed) as bio-barriers for nutrient reduction in Laguna de Bay. I aspire to become a teacher who makes science meaningful, accessible, and relevant to every learner.",
+"Personal Educational Philosophy":"I believe that every learner is capable of understanding science when instruction is clear, engaging, and connected to real life. Teaching is a vocation of service that requires patience, integrity, and continuous learning. I commit to creating an inclusive classroom where curiosity is encouraged, mistakes are treated as opportunities to grow, and learners are guided to think critically and act responsibly toward their community and environment.",
+"Career Objectives":"To become a licensed professional teacher in the secondary level; to deliver quality, inquiry-based science instruction; to engage in research and community extension that promote environmental stewardship; and to pursue graduate studies that will further strengthen my competence in science education.",
+"Curriculum Vitae (PDF)":"Manaog_JulianaNicole_CV.pdf (link to be attached)",
+"Personal learning goals and expectations for Field Study 1 and Field Study 2":"For Field Study 1, I aim to observe how teachers plan, deliver, and assess lessons in an actual school setting, and to connect these observations to the principles and theories studied in my professional education courses. For Field Study 2, I aim to develop my competence in assisting the cooperating teacher, preparing instructional materials, and facilitating short learning activities. Throughout both courses, I expect to receive constructive feedback, to practice professional ethics and punctuality, and to reflect regularly on my strengths and areas for improvement.",
+"School Profile":"Central Bicutan National High School is a public secondary school in Taguig City offering Junior High School and Senior High School programs. The school serves learners from the surrounding barangays and is supported by a dedicated faculty, an active Parent-Teacher Association, and partnerships with the local government.",
+"Vision":"A school that nurtures competent, morally upright, and globally competitive learners who are active contributors to a progressive and sustainable community.",
+"Mission":"To provide quality, inclusive, and accessible education through dedicated teachers, a safe and child-friendly learning environment, and strong partnerships with families and the community.",
+"Core Values":"Maka-Diyos, Makatao, Makakalikasan, at Makabansa",
+"Organizational Structure":"School Principal \u2192 Assistant Principal \u2192 Department Heads (Science, Mathematics, English, Filipino, Araling Panlipunan, MAPEH, TLE) \u2192 Classroom Teachers \u2192 Non-teaching Personnel. Student organizations are led by the Supreme Student Government.",
+"School Facilities":"Classrooms, science laboratory, computer laboratory, library, covered court, clinic, guidance office, canteen, and faculty room.",
+"Week Number and Date":"Week 1 \u2013 August 24, 2026",
+"Learning Objectives":"To familiarize myself with the school environment, classroom routines, and the cooperating teacher\u2019s instructional approach; and to identify the learning competencies covered in the Grade 8 Science class.",
+"Classroom Observations (Field Study 1)":"The class began with a prayer and a short review of the previous lesson. The teacher used guided questioning and a demonstration to explain the topic, and learners were grouped for a short activity. Classroom management was observed to be consistent, with clear routines and respectful interaction between the teacher and the learners.",
+"Participation and Assigned Tasks (Field Study 2)":"I assisted in checking attendance, distributing activity sheets, and monitoring group work. I also prepared a set of visual aids for the next lesson under the guidance of my cooperating teacher.",
+"Learning Evidences":"Signed observation form, copy of the lesson plan, activity sheets, and my field notes for the week.",
+"Weekly Reflection":"This first week showed me that effective teaching depends on careful planning and strong classroom management. I learned to value learner participation and the importance of preparing materials in advance. In the coming weeks, I plan to improve my confidence in communicating with learners and to take more detailed observation notes.",
+"Overview":"This section documents my participation in professional development programs and official university and college activities, including seminars, webinars, workshops, lecture series, mock board examinations, assemblies, and extension programs.",
+"a. Title of the Activity":"Seminar on Innovative Science Teaching Strategies",
+"b. Date":"September 12, 2026",
+"c. Brief Description":"A college-wide seminar that introduced inquiry-based and technology-integrated strategies for teaching science, featuring a guest speaker from the field of science education and a short demonstration lesson.",
+"d. Reflection":"The seminar broadened my understanding of how experiments and digital tools can make abstract science concepts more concrete for learners. I intend to apply the strategies I learned when designing my own lesson plans and activities during Field Study 2.",
+"f. Certificates and Recognitions":"Certificate of Participation \u2013 College of Innovative Learning and Teaching, Taguig City University",
+"Observation Forms":"Signed FS 1 observation forms, Weeks 1\u20136",
+"Attendance Records":"Field Study attendance sheet signed by the cooperating teacher",
+"School Forms (if permitted)":"Class program and school calendar copy",
+"Endorsement or Acceptance Letter (if applicable)":"Endorsement letter from the College and acceptance letter from the school",
+"Approved Class or Observation Schedule":"Approved observation schedule for Grade 8 Science",
+"Observation Notes or Field Notes":"Handwritten and typed field notes, Weeks 1\u20136",
+"Feedback or Evaluation Forms":"Cooperating teacher\u2019s evaluation and feedback forms",
+"Consent Forms (if applicable)":"Parent and school consent for photo documentation"
+};
+var ROWS=[["Confidence in delivering lessons","Conduct short micro-teaching sessions and request feedback from the cooperating teacher after each session","August\u2013November 2026","Improved clarity, pacing, and learner engagement in lesson delivery"],["Preparation of varied instructional materials","Attend a workshop on instructional design and prepare at least one new learning material every week","September\u2013December 2026","A portfolio of well-designed, curriculum-aligned teaching materials"]];
+function fill(){
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector('label'),f=fl.querySelector('.f');if(l&&f&&EX[l.textContent]&&!f.textContent.trim())f.textContent=EX[l.textContent]});
+ document.querySelectorAll('.apps li').forEach(function(li){var f=li.querySelector('.f'),k=li.querySelector('b').textContent;if(EX[k]&&!f.textContent.trim())f.textContent=EX[k]});
+ document.querySelectorAll('#rows tr').forEach(function(tr,i){if(ROWS[i])tr.querySelectorAll('td[contenteditable]').forEach(function(td,j){td.textContent=ROWS[i][j]})});
+}
+if(!load()){build();fill();applyTNHS();try{localStorage.setItem(UPK,'1')}catch(e){}persist()}
+else{var u=null;try{u=localStorage.getItem(UPK)}catch(e){}if(!u){applyTNHS();try{localStorage.setItem(UPK,'1')}catch(e){}persist()}}
+showTab(0);
+var PICS='<div class="photos"><label class="btn sm">+ Add picture<input type="file" accept="image/*" multiple hidden></label></div>';
+function customField(){return '<div class="fld full cf"><button class="x" data-del>Remove field</button><label contenteditable="true" data-ph="Field title">Additional Information</label><div class="f tall" contenteditable="true" data-ph="Write details here\u2026"></div>'+PICS+'</div>'}
+function enhance(){
+ var roots=[],sc=document.querySelectorAll('.pane')[3];if(sc)roots.push(sc);
+ document.querySelectorAll('#weeks .card').forEach(function(c){roots.push(c)});
+ roots.forEach(function(r){
+  r.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector('label');
+   if(!fl.querySelector('.f')||fl.querySelector('.photos')||fl.classList.contains('cf')||fl.classList.contains('addf'))return;
+   if(l&&/^Week Number/.test(l.textContent))return;
+   fl.insertAdjacentHTML('beforeend',PICS)});
+  var g=r.querySelector('.grid');if(g&&!g.querySelector('.addf'))g.insertAdjacentHTML('beforeend','<div class="fld full addf"><button class="btn" data-addf>+ Add field</button></div>');
+ });
+}
+document.addEventListener('click',function(e){
+ var a=e.target.closest('[data-addf]');
+ if(a){a.closest('.addf').insertAdjacentHTML('beforebegin',customField());save();return}
+ if(e.target.closest('[data-add="weeks"]')){enhance();save()}
+});
+enhance();persist();
+var MN=['January','February','March','April','May','June','July','August','September','October','November','December'],DN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+function buildSched(){var out=[],cur=new Date(2026,8,16),end=new Date(2026,9,30),wk=null,key=null;
+ for(;cur<=end;cur=new Date(cur.getFullYear(),cur.getMonth(),cur.getDate()+1)){var g=cur.getDay();if(g<1||g>4)continue;
+  var mon=new Date(cur.getFullYear(),cur.getMonth(),cur.getDate()-(g-1)).getTime();
+  if(mon!==key){key=mon;wk=[];out.push(wk)}wk.push(new Date(cur))}
+ return out}
+var SCH=buildSched();
+function rng(w){var a=w[0],b=w[w.length-1],s=MN[a.getMonth()]+' '+a.getDate();
+ if(a.getTime()===b.getTime())return s+', 2026 ('+DN[a.getDay()]+')';
+ return s+(a.getMonth()===b.getMonth()?'\u2013':' \u2013 '+MN[b.getMonth()]+' ')+b.getDate()+', 2026 ('+DN[a.getDay()]+'\u2013'+DN[b.getDay()]+')'}
+function decorate(card,i){var w=SCH[i];if(!w)return;var df=null;
+ card.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector('label');if(l&&/^Week Number/.test(l.textContent))df=fl});
+ var old=card.querySelector('.days');if(old)old.remove();
+ if(!df)return;
+ df.querySelector('.f').textContent='Week '+(i+1)+' \u2013 '+rng(w);
+ df.insertAdjacentHTML('afterend','<div class="fld full days"><label>School days \u2013 Monday to Thursday only (tap a day to mark it as not attended)</label><div class="chips">'+
+  w.map(function(d){return '<button class="chip on" data-day="'+d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+'">'+DN[d.getDay()]+', '+MN[d.getMonth()].slice(0,3)+' '+d.getDate()+'</button>'}).join('')+'</div></div>')}
+document.addEventListener('click',function(e){
+ var c=e.target.closest('.chip');if(c){selectDay(c);return}
+ var at=e.target.closest('[data-att]');if(at){toggleAtt(at);return}
+ if(e.target.closest('[data-addwk]')){var wk=document.getElementById('weeks'),n=wk.querySelectorAll('.card').length;
+  if(n>=SCH.length){toast('The deployment period (Sep 16 \u2013 Oct 30, 2026) is already fully covered');return}
+  wk.insertAdjacentHTML('beforeend',week());decorate(wk.lastElementChild,n);ensurePanels(wk.lastElementChild);enhance();save()}
+});
+(function(){var UK='tcu-fs-up-sched',done=null;try{done=localStorage.getItem(UK)}catch(e){}
+ if(done)return;var wk=document.getElementById('weeks');if(!wk)return;
+ while(wk.querySelectorAll('.card').length<SCH.length)wk.insertAdjacentHTML('beforeend',week());
+ wk.querySelectorAll('.card').forEach(function(c,i){decorate(c,i)});
+ var ab=document.querySelector('[data-add="weeks"]');if(ab){ab.removeAttribute('data-add');ab.setAttribute('data-addwk','')}
+ if(!document.querySelector('.note.sched'))wk.insertAdjacentHTML('beforebegin','<p class="note sched"><b>Deployment period:</b> September 16 \u2013 October 30, 2026. <b>School days:</b> Monday to Thursday. Fridays, Saturdays and Sundays are not included.</p>');
+ enhance();try{localStorage.setItem(UK,'1')}catch(e){}persist()})();
+(function(){var K='tcu-fs-up-wkex',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var X=[
+ ["The cooperating teacher began the class with a short recall activity on the previous lesson, then introduced the concepts of speed and velocity using real-life examples such as a moving jeepney and a walking student. Learners measured the time it took a classmate to walk a marked distance, and the class computed the speed together. Most learners participated actively, and the teacher used guided questioning to correct misconceptions.","This week showed me that connecting concepts to everyday experiences makes abstract ideas easier for learners to understand. I also noticed the value of hands-on measurement in building understanding. I will continue to prepare simple, relatable examples for the topics I will assist with."],
+ ["The teacher conducted a demonstration on balanced and unbalanced forces using a rope and objects of different masses. Learners were divided into groups and given activity sheets to record their observations. The teacher moved around the room to monitor group work, gave immediate feedback, and closed the lesson with a short formative quiz to check understanding.","I learned that group activities encourage collaboration, but they require clear instructions and good time management to remain productive. Observing the teacher\u2019s use of a formative quiz showed me the importance of checking understanding before moving to the next topic. I plan to practice giving concise, step-by-step instructions."],
+ ["The lesson focused on Newton\u2019s laws of motion. The teacher presented a short video clip, followed by a discussion on how the laws apply to everyday situations such as riding a bicycle and wearing seat belts. Learners were given the chance to share their own examples, and the teacher addressed questions patiently. Some learners needed additional support, which the teacher provided through peer tutoring.","This week reminded me that learners have diverse needs and that differentiated support is essential in the classroom. I was inspired by how the teacher used peer tutoring to include everyone. I want to improve my ability to recognize learners who need extra help and to respond appropriately."],
+ ["The class performed a simple laboratory activity on friction using inclined surfaces of different textures. The teacher reviewed safety guidelines before distributing the materials, and learners recorded their results in a data table. After the activity, the teacher led a discussion that helped learners draw conclusions from their data and relate them to real-life situations.","Observing the laboratory activity helped me appreciate the importance of safety and organization in science instruction. I realized that guiding learners from observation to conclusion develops their critical thinking skills. I will apply the same structure when I prepare my own activities and materials."],
+ ["The teacher used a review game to prepare learners for the periodical examination. Learners worked in teams to answer questions on force, motion, and energy, and the teacher gave brief explanations for incorrect answers. The classroom atmosphere was lively yet orderly, and the teacher maintained discipline through clear expectations and positive reinforcement.","I observed that learning games can increase motivation while reinforcing key concepts, provided that rules and expectations are clear. The teacher\u2019s positive reinforcement strategies showed me that encouragement is more effective than reprimand. I will continue to develop my classroom management skills in the coming weeks."],
+ ["In the final week, the class was assessed through a written test and a short performance task. The teacher distributed the materials, explained the scoring rubric, and monitored the learners to ensure honesty and order. After the assessment, the teacher gave feedback on common errors and discussed ways to improve.","This final week made me realize how far I have progressed since the start of my field study. I gained a deeper understanding of lesson planning, classroom management, and assessment, and I am grateful for the guidance of my cooperating teacher. I will carry these lessons into my future practice as a science teacher."]];
+ document.querySelectorAll('#weeks .card').forEach(function(c,i){var e=X[i-1];if(!e)return;
+  c.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector('label'),f=fl.querySelector('.f');if(!l||!f||f.textContent.trim())return;
+   if(l.textContent==='Classroom Observations (Field Study 1)')f.textContent=e[0];
+   else if(l.textContent==='Weekly Reflection')f.textContent=e[1]})});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+(function(){var K='tcu-fs-up-tnhslogo',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var pane=document.querySelectorAll('.pane')[3],g=pane&&pane.querySelector('.grid');if(!g)return;
+ var has=false;g.querySelectorAll('.fld>label').forEach(function(l){if(l.textContent==='School Logo')has=true});
+ if(!has){g.insertAdjacentHTML('afterbegin','<div class="fld full"><label>School Logo</label><label class="pp lgx has" style="background-image:url(\''+"assets2/img152.jpg"+'\')"><input type="file" accept="image/*" hidden><span>Upload logo</span></label></div>')}
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+
+
+var FD=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+function ensurePanels(root){(root||document).querySelectorAll('.days').forEach(function(dy){
+ var lab=dy.querySelector(':scope>label');if(lab)lab.textContent='School days (Monday to Thursday) \u2013 tap a date to open its daily narrative report';
+ dy.querySelectorAll('.chip').forEach(function(ch){var k=ch.dataset.day;if(dy.querySelector('.dr[data-d="'+k+'"]'))return;
+  var p=k.split('-'),dt=new Date(+p[0],+p[1]-1,+p[2]);
+  dy.insertAdjacentHTML('beforeend','<div class="dr" data-d="'+k+'" hidden><h4>Daily Narrative Report \u2013 '+FD[dt.getDay()]+', '+MN[dt.getMonth()]+' '+dt.getDate()+', 2026</h4><div class="fld"><label>Narrative of the day</label><div class="f tall" contenteditable="true" data-ph="Narrate the day: what you observed, the tasks you did, your interactions with the teacher and learners, and what you learned\u2026"></div>'+PICS+'</div><button class="btn sm" data-att>\u2713 Attended</button></div>')})})}
+function syncAtt(pn,c){pn.querySelector('[data-att]').textContent=c.classList.contains('on')?'\u2713 Attended \u2013 tap to mark as not attended':'\u2715 Not attended \u2013 tap to mark as attended'}
+function selectDay(c,force){var card=c.closest('.card'),pn=card.querySelector('.dr[data-d="'+c.dataset.day+'"]');if(!pn)return;
+ var wasOpen=!pn.hidden;card.querySelectorAll('.dr').forEach(function(x){x.hidden=true});card.querySelectorAll('.chip').forEach(function(x){x.classList.remove('sel')});
+ if(!wasOpen||force){pn.hidden=false;c.classList.add('sel');syncAtt(pn,c);setTimeout(function(){pn.scrollIntoView({behavior:'smooth',block:'nearest'})},60)}save()}
+function toggleAtt(b){var pn=b.closest('.dr'),c=b.closest('.card').querySelector('.chip[data-day="'+pn.dataset.d+'"]');if(!c)return;c.classList.toggle('on');syncAtt(pn,c);save()}
+document.addEventListener('change',function(e){var t=e.target;if(t.id!=='gd'||!t.value)return;
+ var p=t.value.split('-'),dt=new Date(+p[0],+p[1]-1,+p[2]),g=dt.getDay();
+ if(dt<new Date(2026,8,16)||dt>new Date(2026,9,30)){toast('That date is outside the deployment period (Sep 16 \u2013 Oct 30, 2026)');return}
+ if(g<1||g>4){toast('No school on Fridays, Saturdays and Sundays');return}
+ var ch=document.querySelector('.chip[data-day="'+(+p[0])+'-'+(+p[1])+'-'+(+p[2])+'"]');if(!ch){toast('No entry found for that date');return}
+ showTab(4);selectDay(ch,true)});
+window.addEventListener('beforeprint',function(){document.querySelectorAll('.dr[hidden]').forEach(function(p){var t=p.querySelector('.f');if((t&&t.textContent.trim())||p.querySelector('figure')){p.hidden=false;p.dataset.pr='1'}})});
+window.addEventListener('afterprint',function(){document.querySelectorAll('.dr[data-pr]').forEach(function(p){p.hidden=true;delete p.dataset.pr})});
+(function(){ensurePanels();var n=document.querySelector('.note.sched');
+ if(n&&!document.getElementById('gd'))n.insertAdjacentHTML('afterend','<div class="goto"><label for="gd">Go to a date:</label><input type="date" id="gd" min="2026-09-16" max="2026-10-30"></div>');
+ persist()})();
+
+
+(function(){var K='tcu-fs-up-profile3',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var P={
+ "Full Name":"Juliana Nicole Manaog",
+ "Student Number":"23-00525",
+ "Program and Major":"Bachelor of Secondary Education, Major in Science",
+ "Academic Year":"2026-2027",
+ "Course Code and Course Title":"PROF ED 301 FIELD STUDY 1 (Observations and Teaching-Learning in Actual School Environment)\nPROF ED 302 FIELD STUDY 2 (Participation and Teaching Assistantship)",
+ "Field Study Adviser":"Prof. Jeo J. Maniulit",
+ "Cooperating School":"Taguig National High School",
+ "Cooperating Teacher":"Reycelle E. San Pedro",
+ "Brief Biography":"Juliana Nicole Manaog is a Bachelor of Secondary Education student majoring in Science who is passionate about learning and teaching. A consistent honor student, she continues to gain knowledge and experience as a pre-service teacher that help her grow both personally and professionally. She is also a participant in the Tara Bara Tutoring Program, an experience that further strengthens her commitment to helping others learn. Beyond academics, she is an active athlete who plays badminton and volleyball and takes part in competitions, earning victories in school and barangay competitions, which have taught her discipline, teamwork, and perseverance. She believes that being a teacher is not only about sharing knowledge but also about guiding students, understanding their needs, and inspiring them to believe in their abilities. As she prepares for her future career, she hopes to become a dedicated and compassionate Science teacher who makes learning meaningful, encourages curiosity, and creates a positive impact on the lives of her students.",
+ "Personal Educational Philosophy":"I believe that teaching is a calling rooted in compassion, patience, and a genuine love for learning. Every learner is unique and deserves to be understood, supported, and encouraged to discover their own potential. As a future Science teacher, I aim to make learning meaningful by connecting lessons to real life, nurturing curiosity, and creating a safe and inclusive classroom where mistakes are welcomed as opportunities to grow. I commit to continuous learning and honest reflection so that I may inspire my students to think critically, act responsibly, and believe in what they can achieve.",
+ "Career Objectives":"To become a licensed professional teacher by passing the Licensure Examination for Professional Teachers (LPT); to grow into a globally competitive Science teacher who delivers quality, inquiry-based, and learner-centered instruction; and to continuously pursue professional development, research, and service that will make me an effective, compassionate, and dedicated educator.",
+ "Curriculum Vitae (PDF)":""};
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector('label'),f=fl.querySelector('.f');if(!l||!f)return;
+  if(l.textContent==='Course Code and Title')l.textContent='Course Code and Course Title';
+  if(l.textContent==='Course Code and Course Title')fl.classList.add('full');
+  if(Object.prototype.hasOwnProperty.call(P,l.textContent))f.textContent=P[l.textContent]});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var K='tcu-fs-up-v6',d=null,old=null;try{d=localStorage.getItem(K);old=localStorage.getItem('tcu-fs-up-v5')}catch(e){}if(d)return;
+ var T={
+ "Short Introduction about the Portfolio":"This electronic portfolio is a systematic and reflective compilation of the experiences, observations, learning evidences, and professional insights I have gathered as a pre-service teacher in Field Study 1 (PROF ED 301) and Field Study 2 (PROF ED 302) of the Bachelor of Secondary Education program, major in Science, at Taguig City University. Anchored on the principles of experiential learning and reflective practice, it documents my classroom observations, participation and teaching assistantship, and engagement in professional development activities at Taguig National High School. Through this portfolio, I aim to demonstrate the integration of theory and practice, evaluate my growth in the competencies expected of a beginning teacher, and identify areas for continuous improvement as I prepare for the teaching profession.",
+ "Personal learning goals and expectations for Field Study 1 and Field Study 2":"For Field Study 1, I aim to (1) observe and analyze how teaching-learning processes, classroom management, and assessment are carried out in an actual school environment; (2) relate these observations to the theories and principles studied in my professional education courses; and (3) develop a professional disposition marked by punctuality, ethical conduct, and respect for learners, teachers, and school personnel.\n\nFor Field Study 2, I aim to (1) participate meaningfully in teaching assistantship by supporting the cooperating teacher in lesson preparation, instructional delivery, and learner monitoring; (2) design and use appropriate instructional materials and learning activities in Science; and (3) engage in reflective practice through constructive feedback in order to strengthen my pedagogical and professional competence.\n\nI expect that these experiences will prepare me to become a competent, reflective, and learner-centered Science teacher."};
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector('label'),f=fl.querySelector('.f');if(!l||!f)return;
+  if(!old&&Object.prototype.hasOwnProperty.call(T,l.textContent))f.textContent=T[l.textContent];
+  if((l.textContent==='Field Study Adviser'||l.textContent==='Cooperating Teacher')&&!fl.querySelector('.pp'))
+   fl.insertAdjacentHTML('beforeend','<label class="pp ps"><input type="file" accept="image/*" hidden><span>Upload Photo</span></label>')});
+ var IA=IMGDB["d16a"],IB=IMGDB["d16b"];
+ var pn=document.querySelector('.dr[data-d="2026-9-16"]');
+ if(pn){var nf=pn.querySelector('.f');
+  if(nf&&!nf.textContent.trim())nf.textContent="Today marked the first day of our deployment for Field Study 1 and Field Study 2. Our Field Study adviser, Prof. Jeo J. Maniulit, accompanied us to Taguig National High School and formally endorsed us to the school. He then introduced us to Mrs. Lydia H. Pasicolan, Head Teacher III of the Junior High School Science Department.\n\nWe took group photographs at the school\u2019s \u201cI \u2665 TNHS\u201d landmark to commemorate the start of our deployment. This orientation marked the beginning of my immersion in an actual school setting and set the professional tone for the weeks ahead. I look forward to learning from the teachers and learners of Taguig National High School.";
+  var box=pn.querySelector('.photos');
+  if(box)[['d16a',IA],['d16b',IB]].forEach(function(x){var ex=box.querySelector('img[data-k="'+x[0]+'"]');if(ex){ex.src=x[1];return}
+   var fg=document.createElement('figure');fg.className='w';fg.innerHTML='<img alt="" data-k="'+x[0]+'"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true"></figcaption>';
+   fg.querySelector('img').src=x[1];fg.querySelector('figcaption').textContent='Field Study students at Taguig National High School on deployment day, September 16, 2026';
+   box.insertBefore(fg,box.querySelector('label'))})}
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var K='tcu-fs-cover-pos',KP='tcu-fs-cover-photo',me=document.querySelector('.me');if(!me)return;
+ var box=me.querySelector('.mp'),img=me.querySelector('.mph'),tl=me.querySelector('.mtl'),ab=me.querySelector('[data-padj]'),sz=document.getElementById('psz'),st={x:0,y:75,s:1.75},dr=null;
+ function ap(){img.style.transform='translate('+st.x+'px,'+st.y+'px) scale('+st.s+')'}
+ function sv(){try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}
+ try{if(!localStorage.getItem('tcu-fs-up-photo7')){localStorage.removeItem(KP);localStorage.removeItem(K);localStorage.setItem('tcu-fs-up-photo7','1')}var o=JSON.parse(localStorage.getItem(K));if(o&&isFinite(o.x)&&isFinite(o.y)&&isFinite(o.s))st=o;var u=localStorage.getItem(KP);if(u)img.src=u}catch(e){}
+ sz.value=Math.round(st.s*100);ap();
+ function adj(on){me.classList.toggle('adj',on);tl.hidden=!on;ab.hidden=on}
+ ab.addEventListener('click',function(){adj(true)});
+ me.querySelector('[data-pdone]').addEventListener('click',function(){adj(false);sv()});
+ me.querySelector('[data-prst]').addEventListener('click',function(){st={x:0,y:75,s:1.75};sz.value=175;ap();sv()});
+ sz.addEventListener('input',function(){st.s=sz.value/100;ap();sv()});
+ box.addEventListener('pointerdown',function(e){if(!me.classList.contains('adj'))return;dr={x:e.clientX-st.x,y:e.clientY-st.y};try{box.setPointerCapture(e.pointerId)}catch(x){}e.preventDefault()});
+ box.addEventListener('pointermove',function(e){if(!dr)return;st.x=e.clientX-dr.x;st.y=e.clientY-dr.y;ap()});
+ function end(){if(dr){dr=null;sv()}}
+ box.addEventListener('pointerup',end);box.addEventListener('pointercancel',end);
+ box.addEventListener('wheel',function(e){if(!me.classList.contains('adj'))return;e.preventDefault();st.s=Math.max(.5,Math.min(2,st.s*(e.deltaY<0?1.05:.95)));sz.value=Math.round(st.s*100);ap();sv()},{passive:false});
+ me.querySelector('input[type=file]').addEventListener('change',function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();
+  r.onload=function(){var im=new Image();im.onload=function(){var k=Math.min(1,700/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+   var u=c.toDataURL('image/png');img.src=u;try{localStorage.setItem(KP,u)}catch(x){toast('Photo is shown but could not be saved (storage full)')}};im.src=r.result};r.readAsDataURL(f);e.target.value=''})})();
+
+(function(){var K='tcu-fs-up-people',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var IM={"Field Study Adviser":"assets2/img153.jpg","Cooperating Teacher":"assets2/img154.jpg"};
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector('label');if(!l||!IM[l.textContent])return;
+  var sl=fl.querySelector('.pp');if(!sl){fl.insertAdjacentHTML('beforeend','<label class="pp ps"><input type="file" accept="image/*" hidden><span>Upload Photo</span></label>');sl=fl.querySelector('.pp')}
+  sl.style.backgroundImage="url('"+IM[l.textContent]+"')";sl.style.backgroundPosition='center top';sl.classList.add('has')});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var K='tcu-fs-up-fac',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var F=[["fac861", IMGDB["fac861"], ""], ["fac860", IMGDB["fac860"], ""], ["fac859", IMGDB["fac859"], "School Clinic"], ["fac858", IMGDB["fac858"], "Immaculate Conception Chapel"], ["fac854", IMGDB["fac854"], ""], ["fac855", IMGDB["fac855"], "Gulayan sa Paaralan"], ["fac856", IMGDB["fac856"], "ISEC-SAS Laboratory"], ["fac857", IMGDB["fac857"], ""], ["fac853", IMGDB["fac853"], ""], ["fac852", IMGDB["fac852"], ""], ["fac851", IMGDB["fac851"], "Library and Guidance Office (Care Center)"], ["fac850", IMGDB["fac850"], "Cyber Lab and E-Classroom"]],box=null;
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector('label');if(l&&l.textContent==='School Facilities')box=fl.querySelector('.photos')});
+ if(!box)return;
+ var add=box.querySelector('label');
+ F.forEach(function(x){if(box.querySelector('img[data-k="'+x[0]+'"]'))return;
+  var fg=document.createElement('figure');fg.className='m';
+  fg.innerHTML='<img alt="" data-k="'+x[0]+'"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the picture"></figcaption>';
+  fg.querySelector('img').src=x[1];fg.querySelector('figcaption').textContent=x[2];box.insertBefore(fg,add)});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+function enhancePD(){document.querySelectorAll('#pds .card .fld').forEach(function(fl){var l=fl.querySelector('label');
+ if(l&&/^f\. Certificates/.test(l.textContent)&&!fl.querySelector('.photos'))fl.insertAdjacentHTML('beforeend',PICS)})}
+document.addEventListener('click',function(e){if(e.target.closest('[data-add="pds"]')){enhancePD();save()}});
+(function(){var K='tcu-fs-up-cert',d=null;try{d=localStorage.getItem(K)}catch(e){}
+ var pds=document.getElementById('pds');if(!pds)return;
+ if(d){enhancePD();return}
+ pds.querySelectorAll('.card').forEach(function(c){var t=c.querySelector('.f');if(t&&t.textContent.trim()==='Seminar on Innovative Science Teaching Strategies')c.remove()});
+ var E=[{"a": "Certificate of Appreciation \u2013 Class Auditor, Bachelor of Secondary Education Major in Science (Batch 2023)", "b": "June 10, 2025 (Academic Year 2024\u20132025)", "c": "I was recognized as Class Auditor of the Bachelor of Secondary Education, Major in Science, Batch 2023, for my contribution, service, and dedication during Academic Year 2024\u20132025. The certificate was given at Taguig City University and signed by the Class President/Representative, Ms. Allyza Mae H. Rabe, and the Class Vice President, Mr. James Simoun Odin.", "d": "Serving as Class Auditor taught me accountability, transparency, and the importance of careful record-keeping when handling shared responsibilities. The experience strengthened my sense of integrity and service, values that I hope to model as a future teacher.", "f": "Certificate of Appreciation \u2013 issued by the class officers of BSEd Major in Science (Batch 2023), June 10, 2025", "img": "cert1", "cap": "Certificate of Appreciation \u2013 Class Auditor (June 10, 2025)"}, {"a": "Teaching Internship Lecture Series: \u201cShaping Tomorrow\u2019s Classrooms: Creating Learner-Centered and Inclusive Learning Environments\u201d", "b": "July 27, 2026", "c": "A lecture series for teaching interns on creating learner-centered and inclusive learning environments, held at the 5th Floor Administrative Building, Taguig City University, under the College of Innovative Learning and Teaching. The certificate is signed by the program chairs and the Dean of the College.", "d": "The lecture series deepened my understanding of how teachers can design lessons around the needs, interests, and strengths of every learner. It reminded me that inclusion begins with awareness and empathy, and I plan to apply these principles during my field study deployment and in my future classroom.", "f": "Certificate of Participation \u2013 College of Innovative Learning and Teaching, Taguig City University, July 27, 2026", "img": "cert2", "cap": "Certificate of Participation \u2013 Teaching Internship Lecture Series (July 27, 2026)"}, {}],IM={"cert1": IMGDB["cert1"], "cert2": IMGDB["cert2"]},keys={"a":"a. Title of the Activity","b":"b. Date","c":"c. Brief Description","d":"d. Reflection","f":"f. Certificates and Recognitions"},ref=pds.firstChild;
+ E.forEach(function(e){var tmp=document.createElement('div');tmp.innerHTML=pd();var card=tmp.firstElementChild;
+  card.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector('label'),f=fl.querySelector('.f');if(!l||!f)return;
+   Object.keys(keys).forEach(function(k){if(l.textContent===keys[k]&&e[k])f.textContent=e[k]})});
+  pds.insertBefore(card,ref);enhancePD();
+  if(e.img){var box=null;card.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector('label');if(l&&/^f\. Certificates/.test(l.textContent))box=fl.querySelector('.photos')});
+   if(box){var fg=document.createElement('figure');fg.className='c';fg.innerHTML='<img alt="" data-k="'+e.img+'"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the certificate"></figcaption>';
+    fg.querySelector('img').src=IM[e.img];fg.querySelector('figcaption').textContent=e.cap;box.insertBefore(fg,box.querySelector('label'))}}});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var K='tcu-fs-up-profilephoto',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector(':scope>label');if(!l||l.textContent!=='Professional Photo')return;
+  var sl=fl.querySelector('.pp');if(!sl)return;sl.style.backgroundImage="url('assets2/img155.jpg')";sl.style.backgroundPosition='center top';sl.classList.add('has')});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var K='tcu-fs-up-bio-sports',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var S="Beyond academics, she is an active athlete who plays badminton and volleyball and takes part in competitions, earning victories in school and barangay competitions, which have taught her discipline, teamwork, and perseverance.";
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector('.f');if(!l||!f||l.textContent!=='Brief Biography')return;
+  var t=f.textContent;if(/badminton/i.test(t))return;
+  var k=t.indexOf('She believes that being a teacher');
+  f.textContent=k>-1?t.slice(0,k)+S+' '+t.slice(k):(t.trim()?t.trim()+' '+S:S)});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var K='tcu-fs-up-bio3',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector('.f');if(l&&f&&l.textContent==='Brief Biography')f.textContent="Juliana Nicole Manaog is a Bachelor of Secondary Education student majoring in Science who is passionate about learning and teaching. A consistent honor student, she continues to gain knowledge and experience as a pre-service teacher that help her grow both personally and professionally. She is also a participant in the Tara Bara Tutoring Program, an experience that further strengthens her commitment to helping others learn. As a student researcher, she also completed an undergraduate thesis on the simulated efficacy of modular Lemna minor L. (duckweed) bio-barriers in reducing nitrate and phosphate concentrations in the nearshore zones of Laguna de Bay, which strengthened her research, analytical, and environmental problem-solving skills. Beyond academics, she is an active athlete who plays badminton and volleyball and joins sports contests, earning victories in school and barangay competitions, which have taught her discipline, teamwork, and perseverance. She believes that being a teacher is not only about sharing knowledge but also about guiding students, understanding their needs, and inspiring them to believe in their abilities. As she prepares for her future career, she hopes to become a dedicated and compassionate Science teacher who makes learning meaningful, encourages curiosity, and creates a positive impact on the lives of her students."});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+pd=function(){return '<article class="card certc"><button class="x" data-del>Remove</button><div class="fld full"><label>Certificate</label><div class="photos pcert"><label class="btn sm">+ Add certificate picture<input type="file" accept="image/*" multiple hidden></label></div></div>'+f('What I learned that will contribute to my growth','Write what you learned from this activity and how it will help you grow as a teacher\u2026','','full tall')+'</article>'};
+tpl.pds=pd;
+(function(){var K='tcu-fs-up-cert2',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;var pds=document.getElementById('pds');if(!pds)return;
+ var L={"cert1":"Serving as Class Auditor taught me accountability, transparency, and careful record-keeping. It strengthened my integrity and sense of service, values I will carry into my classroom as a future teacher.","cert2":"The lecture series showed me how to design lessons around the needs, interests, and strengths of every learner, and that inclusion begins with awareness and empathy. I will apply these principles in my field study deployment and my future teaching."};
+ Array.prototype.slice.call(pds.querySelectorAll(':scope>.card')).forEach(function(c){if(c.classList.contains('certc'))return;
+  var n=document.createElement('div');n.innerHTML=pd();var nc=n.firstElementChild,box=nc.querySelector('.photos'),add=box.querySelector('label'),learn='',key=null;
+  c.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(l&&f&&/^d\. Reflection/.test(l.textContent))learn=f.textContent});
+  c.querySelectorAll('figure').forEach(function(fg){var im=fg.querySelector('img');if(im&&im.dataset.k&&L[im.dataset.k])key=im.dataset.k;fg.classList.remove('c','m','w');box.insertBefore(fg,add)});
+  if(key)learn=L[key];
+  var lf=nc.querySelectorAll('.fld .f');lf[lf.length-1].textContent=learn;
+  pds.insertBefore(nc,c);c.remove()});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+function syncName(){var nm='',box=null;document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');
+ if(l&&f&&l.textContent==='Full Name')nm=f.textContent.trim();
+ if(l&&l.textContent==='Professional Photo'){fl.classList.add('pfld');var pn=fl.querySelector('.pname');if(!pn){pn=document.createElement('div');pn.className='pname';fl.appendChild(pn)}box=pn}});
+ if(box)box.textContent=nm}
+document.addEventListener('input',function(e){var fl=e.target.closest&&e.target.closest('.fld');if(!fl)return;var l=fl.querySelector(':scope>label');if(l&&l.textContent==='Full Name')syncName()});
+syncName();persist();
+
+document.querySelectorAll('#app .fld').forEach(function(fl){if(fl.querySelector(':scope>.pp.ps'))fl.classList.add('pfld2')});
+persist();
+
+document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');
+ if(l&&f&&l.textContent==='Brief Biography'&&/17th Founding/.test(f.textContent))
+  f.textContent=f.textContent.replace('earning victories such as those during the 17th Founding Anniversary of Taguig City University','earning victories in school and barangay competitions').replace('the 17th Founding Anniversary of Taguig City University','school and barangay competitions')});
+persist();
+
+(function(){var K='tcu-fs-up-g9',d=null;try{d=localStorage.getItem(K)}catch(e){}
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector(':scope>label');if(l&&l.textContent==='School Logo')fl.classList.add('lfld')});
+ if(d){persist();return}
+ var box=null;document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector(':scope>label');if(l&&l.textContent==='School Facilities')box=fl.querySelector('.photos')});
+ if(box&&!box.querySelector('img[data-k="fac942"]')){var add=box.querySelector('label'),fg=document.createElement('figure');fg.className='m';
+  fg.innerHTML='<img alt="" data-k="fac942"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the picture"></figcaption>';
+  fg.querySelector('img').src=IMGDB["fac942"];fg.querySelector('figcaption').textContent='Grade 9 Building';box.insertBefore(fg,add)}
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+var PD_E={"cert1":{a:"Certificate of Appreciation \u2013 Class Auditor, Bachelor of Secondary Education Major in Science (Batch 2023)",b:"June 10, 2025 (Academic Year 2024\u20132025)",c:"I was recognized as Class Auditor of the Bachelor of Secondary Education, Major in Science, Batch 2023, for my contribution, service, and dedication during Academic Year 2024\u20132025. The certificate was given at Taguig City University and signed by the Class President/Representative, Ms. Allyza Mae H. Rabe, and the Class Vice President, Mr. James Simoun Odin."},
+"cert2":{a:"Teaching Internship Lecture Series: \u201cShaping Tomorrow\u2019s Classrooms: Creating Learner-Centered and Inclusive Learning Environments\u201d",b:"July 27, 2026",c:"A lecture series for teaching interns on creating learner-centered and inclusive learning environments, held at the 5th Floor Administrative Building, Taguig City University, under the College of Innovative Learning and Teaching. The certificate is signed by the program chairs and the Dean of the College."}};
+function pdFull(){return '<article class="card"><button class="x" data-del>Remove entry</button><div class="grid">'+
+ f('a. Title of the Activity','Seminar, webinar, workshop, lecture series, mock board exam\u2026')+f('b. Date','Date of the activity')+
+ f('c. Brief Description','What was the activity about?','','full tall')+f('d. Reflection','What I learned that will contribute to my growth\u2026','','full tall')+
+ ph('e. Photo Documentation')+
+ '<div class="fld full"><label>f. Certificates and Recognitions</label><div class="photos pcert"><label class="btn sm">+ Add certificate picture<input type="file" accept="image/*" multiple hidden></label></div></div></div></article>'}
+function planCard(){return '<article class="card"><button class="x" data-del>Remove</button><div class="grid">'+f('Area for Improvement','e.g., Confidence in delivering lessons','','full')+f('Action Plan','Specific steps you will take to improve','','full tall')+f('Timeline','e.g., September \u2013 December 2026')+f('Expected Outcome','What improvement do you expect to achieve?')+'</div></article>'}
+pd=pdFull;tpl.pds=pd;row=planCard;tpl.rows=row;
+(function(){
+ var pds=document.getElementById('pds');
+ if(pds){
+  Array.prototype.slice.call(pds.querySelectorAll(':scope>.card.certc')).forEach(function(c){
+   if(c.querySelector(':scope>.grid'))return;
+   var n=document.createElement('div');n.innerHTML=pdFull();var nc=n.firstElementChild;
+   var boxes=nc.querySelectorAll('.photos'),cbox=boxes[boxes.length-1],cadd=cbox.querySelector('label'),learn='',key=null;
+   c.querySelectorAll('.fld').forEach(function(fl){var f=fl.querySelector(':scope>.f');if(f)learn=f.textContent});
+   c.querySelectorAll('figure').forEach(function(fg){var im=fg.querySelector('img');if(im&&im.dataset.k&&PD_E[im.dataset.k])key=im.dataset.k;cbox.insertBefore(fg,cadd)});
+   var e=PD_E[key]||{},fm={"a. Title of the Activity":e.a,"b. Date":e.b,"c. Brief Description":e.c,"d. Reflection":learn};
+   nc.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(l&&f&&fm[l.textContent])f.textContent=fm[l.textContent]});
+   pds.insertBefore(nc,c);c.remove()});
+  if(!document.getElementById('pdnote'))pds.insertAdjacentHTML('beforebegin','<p class="note ent" id="pdnote"><b>Each entry includes:</b> a. Title of the Activity \u00b7 b. Date \u00b7 c. Brief Description \u00b7 d. Reflection \u00b7 e. Photo Documentation \u00b7 f. Certificates and Recognitions</p>');
+ }
+ var tb=document.getElementById('rows');
+ if(tb&&tb.tagName==='TBODY'){var data=[];tb.querySelectorAll('tr').forEach(function(tr){var t=[];tr.querySelectorAll('td[contenteditable]').forEach(function(td){t.push(td.textContent)});data.push(t)});
+  var wrap=tb.closest('.tw'),nd=document.createElement('div');nd.id='rows';
+  data.forEach(function(t){var x=document.createElement('div');x.innerHTML=planCard();var cd=x.firstElementChild,fs=cd.querySelectorAll('.f');for(var i=0;i<4;i++)fs[i].textContent=t[i]||'';nd.appendChild(cd)});
+  wrap.parentNode.replaceChild(nd,wrap)}
+ var L='ABCDEFGH';document.querySelectorAll('.apps li').forEach(function(li,i){var b=li.querySelector('b');if(b&&!/^[A-H]\. /.test(b.textContent))b.textContent=L[i]+'. '+b.textContent;
+  if(!li.querySelector('.photos'))li.insertAdjacentHTML('beforeend',PICS)});
+ persist()})();
+
+pd=function(){return '<article class="card certc"><button class="x" data-del>Remove</button><div class="grid">'+
+ f('a. Title of the Activity','Seminar, webinar, workshop, lecture series, mock board exam\u2026')+f('b. Date','Date of the activity')+
+ f('c. Brief Description','What was the activity about?','','full tall')+
+ f('d. Reflection','What I learned and how it will contribute to my growth as a future teacher\u2026','','full tall')+
+ ph('e. Photo Documentation')+
+ '<div class="fld full"><label>f. Certificates and Recognitions</label><div class="photos pcert"><label class="btn sm">+ Add certificate picture<input type="file" accept="image/*" multiple hidden></label></div></div></div></article>'};
+tpl.pds=pd;
+(function(){var K='tcu-fs-up-pd3',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;var pds=document.getElementById('pds');if(!pds)return;
+ var M={"cert1": {"a": "Certificate of Appreciation \u2013 Class Auditor, Bachelor of Secondary Education Major in Science (Batch 2023)", "b": "June 10, 2025 (Academic Year 2024\u20132025)", "c": "I was recognized as Class Auditor of the Bachelor of Secondary Education, Major in Science, Batch 2023, for my contribution, service, and dedication during Academic Year 2024\u20132025. The certificate was given at Taguig City University and signed by the Class President/Representative, Ms. Allyza Mae H. Rabe, and the Class Vice President, Mr. James Simoun Odin."}, "cert2": {"a": "Teaching Internship Lecture Series: \u201cShaping Tomorrow\u2019s Classrooms: Creating Learner-Centered and Inclusive Learning Environments\u201d", "b": "July 27, 2026", "c": "A lecture series for teaching interns on creating learner-centered and inclusive learning environments, held at the 5th Floor Administrative Building, Taguig City University, under the College of Innovative Learning and Teaching. The certificate is signed by the program chairs and the Dean of the College."}},keys={a:'a. Title of the Activity',b:'b. Date',c:'c. Brief Description',d:'d. Reflection'};
+ Array.prototype.slice.call(pds.querySelectorAll(':scope>.card')).forEach(function(c){
+  var has=false;c.querySelectorAll('.fld>label').forEach(function(l){if(l.textContent==='a. Title of the Activity')has=true});if(has)return;
+  var t=document.createElement('div');t.innerHTML=pd();var nc=t.firstElementChild,cb=nc.querySelector('.pcert'),add=cb.querySelector('label'),learn='',key=null;
+  c.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(l&&f&&/^What I learned/.test(l.textContent))learn=f.textContent});
+  c.querySelectorAll('figure').forEach(function(fg){var im=fg.querySelector('img');if(im&&im.dataset.k&&M[im.dataset.k])key=im.dataset.k;cb.insertBefore(fg,add)});
+  nc.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(!l||!f)return;
+   Object.keys(keys).forEach(function(k){if(l.textContent===keys[k]){if(k==='d')f.textContent=learn;else if(key&&M[key][k])f.textContent=M[key][k]}})});
+  pds.insertBefore(nc,c);c.remove()});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+(function(){
+ document.querySelectorAll('.pane>h2').forEach(function(h,i){var sp=h.querySelector('span');if(sp&&T[i])h.innerHTML='<span>'+sp.textContent+'</span>'+T[i].replace(/&/g,'&amp;')});
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');
+  if(l&&f&&l.textContent==='Overview'&&(!f.textContent.trim()||/^This section documents my participation/.test(f.textContent)))f.textContent="Participation in professional development programs and official university or college activities, such as seminars, webinars, workshops, lecture series, conferences, mock board examinations, assemblies, extension programs, and other institutional events."});
+ document.querySelectorAll('.apps li').forEach(function(li){if(!li.querySelector('.photos'))li.insertAdjacentHTML('beforeend',PICS)});
+ persist()})();
+
+(function(){var K='tcu-fs-up-wk1real',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var P={"2026-9-16":[["d16c", IMGDB["d16c"], "Writing the correct responses for the summative test, as asked by Ma\u2019am Lita"]],"2026-9-17":[["d17a", IMGDB["d17a"], "Observing Ma\u2019am Lita\u2019s class discussion"], ["d17b", IMGDB["d17b"], "Observing Ma\u2019am Lita\u2019s class discussion"]]};
+ function panel(k){return document.querySelector('.dr[data-d="'+k+'"]')}
+ Object.keys(P).forEach(function(k){var pn=panel(k);if(!pn)return;var box=pn.querySelector('.photos');if(!box)return;var add=box.querySelector('label');
+  P[k].forEach(function(x){if(box.querySelector('img[data-k="'+x[0]+'"]'))return;
+   var fg=document.createElement('figure');fg.innerHTML='<img alt="" data-k="'+x[0]+'"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the picture"></figcaption>';
+   fg.querySelector('img').src=x[1];fg.querySelector('figcaption').textContent=x[2];box.insertBefore(fg,add)})});
+ var p16=panel("2026-9-16");if(p16){var f16=p16.querySelector('.f');if(f16&&f16.textContent.indexOf('summative')<0)f16.textContent=f16.textContent.replace(/\s+$/,'')+"\n\nAfter the orientation, Ma\u2019am Lita asked me to write the correct responses for the learners\u2019 summative test. The task required careful attention to accuracy, since correct responses serve as the basis for assessing learners\u2019 work. Although it appeared to be a simple task, it taught me that assessment demands precision and accountability, and I was grateful for the trust given to me on my first day."}
+ var p17=panel("2026-9-17");if(p17){var f17=p17.querySelector('.f');if(f17)f17.textContent="Since my cooperating teacher was absent today, I observed Ma\u2019am Lita\u2019s class discussion instead. I stayed at the back of the classroom and watched how she facilitated the lesson with the help of the projected presentation, and how the learners listened and responded during the discussion. The learners were attentive, and the classroom atmosphere remained orderly and conducive to learning.\n\nThe observation gave me the opportunity to see another teaching approach and to notice how a teacher adjusts the flow of discussion according to the learners\u2019 reactions. I took note of her presentation of the lesson and her classroom management, which I hope to apply when I begin to assist in teaching."}
+ var card=document.querySelector('#weeks .card');
+ if(card)card.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(l&&f&&l.textContent==='Weekly Reflection')f.textContent="My first week of deployment at Taguig National High School began with an orientation from our Field Study adviser, Prof. Jeo J. Maniulit, and an introduction to Mrs. Lydia H. Pasicolan, Head Teacher III of the Junior High School Science Department. On September 16, I was asked by Ma\u2019am Lita to write the correct responses for the learners\u2019 summative test, which taught me the value of accuracy and accountability in assessment. On September 17, because my cooperating teacher was absent, I observed Ma\u2019am Lita\u2019s class discussion and learned how a lesson is presented and managed in an actual classroom.\n\nThese experiences showed me that being a pre-service teacher requires adaptability, humility, and a willingness to learn from every task and every teacher, whether the task is large or small. In the coming weeks, I plan to observe more closely, take more detailed notes, and participate more actively in classroom activities so that I can strengthen my confidence and professional competence."});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var K='tcu-fs-up-d16more',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var pn=document.querySelector('.dr[data-d="2026-9-16"]');if(!pn)return;var box=pn.querySelector('.photos');if(!box)return;var add=box.querySelector('label');
+ [["d16d", IMGDB["d16d"], "Class discussion on the periodic table"], ["d16e", IMGDB["d16e"], "Group 04 Science presentation in class"]].forEach(function(x){if(box.querySelector('img[data-k="'+x[0]+'"]'))return;
+  var fg=document.createElement('figure');fg.innerHTML='<img alt="" data-k="'+x[0]+'"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the picture"></figcaption>';
+  fg.querySelector('img').src=x[1];fg.querySelector('figcaption').textContent=x[2];box.insertBefore(fg,add)});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var K='tcu-fs-up-d17game',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var pn=document.querySelector('.dr[data-d="2026-9-17"]');
+ if(pn){var box=pn.querySelector('.photos'),add=box&&box.querySelector('label'),nf=pn.querySelector('.f');
+  if(nf&&nf.textContent.indexOf('interactive game')<0)nf.textContent=nf.textContent.replace(/\s+$/,'')+"\n\nDuring the lesson, the Grade 8 STE class took part in an interactive game in which the learners, divided into teams, had to guess and form the correct combination of elements for a given compound. For example, water (H\u2082O) required two hydrogen atoms and one oxygen atom, and the first team to form the correct combination earned a point. Learners wrote their answers on the board and arranged element cards on the floor while the teacher guided them. I observed that the game motivated the learners, encouraged teamwork and communication, and helped them understand chemical formulas in an enjoyable and meaningful way.";
+  if(box)[["d17c", IMGDB["d17c"], "A learner writing the correct combination for water (H\u2082O) on the board during the elements game"], ["d17d", IMGDB["d17d"], "Teams discussing their answers during the game"], ["d17e", IMGDB["d17e"], "Learners working out the combination for ammonia (NH\u2083)"], ["d17f", IMGDB["d17f"], "Learners arranging element cards on the floor while the teacher guides them"]].forEach(function(x){if(box.querySelector('img[data-k="'+x[0]+'"]'))return;
+   var fg=document.createElement('figure');fg.innerHTML='<img alt="" data-k="'+x[0]+'"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the picture"></figcaption>';
+   fg.querySelector('img').src=x[1];fg.querySelector('figcaption').textContent=x[2];box.insertBefore(fg,add)})}
+ var card=document.querySelector('#weeks .card');
+ if(card)card.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');
+  if(l&&f&&l.textContent==='Weekly Reflection'&&f.textContent.indexOf("learned how a lesson is presented and managed in an actual classroom.")>=0&&f.textContent.indexOf('interactive game')<0)f.textContent=f.textContent.replace("learned how a lesson is presented and managed in an actual classroom.","learned how a lesson is presented and managed in an actual classroom. I also saw how an interactive game on combining elements into compounds kept the Grade 8 STE learners engaged and working together.")});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var K='tcu-fs-up-pdfreport',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var IMG={"10_1": IMGDB["p10_1"], "11_1": IMGDB["p11_1"], "12_1": IMGDB["p12_1"], "13_1": IMGDB["p13_1"], "14_1": IMGDB["p14_1"], "15_1": IMGDB["p15_1"], "16_1": IMGDB["p16_1"], "17_1": IMGDB["p17_1"], "17_2": IMGDB["p17_2"], "18_1": IMGDB["p18_1"], "19_1": IMGDB["p19_1"], "19_2": IMGDB["p19_2"], "20_1": IMGDB["p20_1"], "20_2": IMGDB["p20_2"], "21_1": IMGDB["p21_1"], "21_2": IMGDB["p21_2"], "22_1": IMGDB["p22_1"], "22_2": IMGDB["p22_2"], "23_1": IMGDB["p23_1"], "24_1": IMGDB["p24_1"], "24_2": IMGDB["p24_2"], "25_1": IMGDB["p25_1"], "25_2": IMGDB["p25_2"], "26_1": IMGDB["p26_1"], "26_2": IMGDB["p26_2"], "27_1": IMGDB["p27_1"], "28_1": IMGDB["p28_1"], "28_2": IMGDB["p28_2"], "29_1": IMGDB["p29_1"], "2_1": IMGDB["p2_1"], "30_1": IMGDB["p30_1"], "31_1": IMGDB["p31_1"], "32_1": IMGDB["p32_1"], "33_1": IMGDB["p33_1"], "34_1": IMGDB["p34_1"], "35_1": IMGDB["p35_1"], "36_1": IMGDB["p36_1"], "37_1": IMGDB["p37_1"], "38_1": IMGDB["p38_1"], "39_1": IMGDB["p39_1"], "40_1": IMGDB["p40_1"], "41_1": IMGDB["p41_1"], "41_2": IMGDB["p41_2"], "42_1": IMGDB["p42_1"], "43_1": IMGDB["p43_1"], "44_1": IMGDB["p44_1"], "45_1": IMGDB["p45_1"], "46_1": IMGDB["p46_1"], "47_1": IMGDB["p47_1"], "48_1": IMGDB["p48_1"], "49_1": IMGDB["p49_1"], "49_2": IMGDB["p49_2"], "4_1": IMGDB["p4_1"], "50_1": IMGDB["p50_1"], "51_1": IMGDB["p51_1"], "52_1": IMGDB["p52_1"], "53_1": IMGDB["p53_1"], "54_1": IMGDB["p54_1"], "55_1": IMGDB["p55_1"], "56_1": IMGDB["p56_1"], "57_1": IMGDB["p57_1"], "58_1": IMGDB["p58_1"], "59_1": IMGDB["p59_1"], "5_1": IMGDB["p5_1"], "60_1": IMGDB["p60_1"], "61_1": IMGDB["p61_1"], "62_1": IMGDB["p62_1"], "63_1": IMGDB["p63_1"], "64_1": IMGDB["p64_1"], "6_1": IMGDB["p6_1"], "7_1": IMGDB["p7_1"], "8_1": IMGDB["p8_1"], "9_1": IMGDB["p9_1"]},DAYS=[["2026-9-16", "append", "\n\nUpon arrival, we were welcomed at the main entrance of Taguig National High School and walked through its tree-shaded grounds, which gave me a calm and welcoming first impression of the school community.", [["2_1", "Main entrance of Taguig National High School"], ["4_1", "Tree-shaded campus path inside the school grounds"]]], ["2026-9-17", "append", "\n\nFor the rest of the day, I stayed in the faculty office, where I reviewed documents and completed administrative tasks. Although this work is less visible than classroom teaching, it showed me that planning, documentation, and record-keeping are essential parts of a teacher\u2019s responsibilities.", [["5_1", "Completing administrative tasks in the faculty office"]]], ["2026-9-21", "set", "The day began with the morning flag ceremony at the school quadrangle, where the learners gathered in orderly lines for the flag raising and assembly. Witnessing this routine reminded me of the discipline, patriotism, and sense of community that schools nurture every day.\n\nInside the classroom, I observed a lecture supported by an interactive display, with learners seated at traditional wooden desks. Later, I watched learners deliver group presentations in the laboratory classroom, with science and introduction slides projected on the screen while their classmates and teachers listened attentively. Seeing learners present their work with growing confidence taught me the value of giving students opportunities to communicate what they have learned.\n\nOverall, the day allowed me to appreciate how technology, learner participation, and school routines work together to create meaningful learning experiences.", [["6_1", "Morning flag ceremony at the school quadrangle"], ["7_1", "Classroom lecture supported by an interactive display"], ["8_1", "Classroom lecture supported by an interactive display"], ["9_1", "Learners\u2019 group presentations in the laboratory classroom"], ["10_1", "Learners\u2019 group presentations in the laboratory classroom"]]], ["2026-9-22", "set", "I devoted the first part of the day to administrative tasks in the faculty room, where I checked learners\u2019 papers, encoded records in a digital spreadsheet, and completed assigned paperwork. These tasks required patience and accuracy, and they helped me understand the effort behind assessment and record-keeping.\n\nI then observed a lesson from the back of the classroom, paying attention to how the teacher delivered instruction with the interactive screen and how the learners responded. Afterward, together with my fellow pre-service teachers, I worked in the laboratory workroom preparing teaching aids and assembling learning materials for upcoming activities. Collaborating with my peers made the work lighter and more enjoyable, and we ended the day with a group photograph to mark our completed tasks.\n\nThis day reminded me that effective teaching is supported by careful preparation, teamwork, and attention to detail.", [["11_1", "Checking learners\u2019 papers and encoding records in the faculty room"], ["12_1", "Checking learners\u2019 papers and encoding records in the faculty room"], ["13_1", "Observing a lesson from the back of the classroom"], ["14_1", "Moments shared with colleagues during the day"], ["15_1", "Moments shared with colleagues during the day"], ["16_1", "Collaborating with fellow pre-service teachers"], ["17_1", "Preparing teaching aids and learning materials in the laboratory workroom"], ["17_2", "Preparing teaching aids and learning materials in the laboratory workroom"], ["18_1", "Preparing teaching aids and learning materials in the laboratory workroom"]]], ["2026-9-23", "set", "Today marked the start of the Science Fest. The daily schedule displayed on the classroom monitor listed the participating Grade 8, 9, and 10 sections, which helped us understand how the activities would be organized. I was assigned to Station 6, where I managed an interactive card-matching and hands-on science activity for the participating learners.\n\nThroughout the day, faculty members, cooperating teachers, and pre-service teachers supervised the different stations, including Stations 2, 5, and 6, and we gathered for a group photograph and a brief evaluation of the event. Facilitating the station allowed me to practice giving clear instructions, guiding learners, and keeping an activity lively yet orderly. It was a joy to see learners enjoy science through play.", [["19_1", "Science Fest schedule displayed on the classroom monitor"], ["19_2", "Facilitating the card-matching activity at Station 6"], ["20_1", "Facilitating the card-matching activity at Station 6"], ["20_2", "Facilitating the card-matching activity at Station 6"], ["21_1", "Facilitating the card-matching activity at Station 6"], ["21_2", "Group photograph with faculty and pre-service teachers at the Science Fest stations"], ["22_1", "Group photograph with faculty and pre-service teachers at the Science Fest stations"], ["22_2", "Group photograph with faculty and pre-service teachers at the Science Fest stations"], ["23_1", "Group photograph with faculty and pre-service teachers at the Science Fest stations"]]], ["2026-9-24", "set", "The Science Fest continued with the Grade 8 sections, including Eucalyptus, Apple, STE, Pomegranate, Plum, Magnolia, Chestnut, Acacia, and Molave, rotating through the interactive stations according to the posted schedule. The laboratory classroom was filled with learners engaged in hands-on activities, experiments, wire-loop games, and educational booths.\n\nAt Station 6, the Eco-Line Match, I welcomed the learners, explained the card-matching mechanics, and guided them as they played. Seeing their enthusiasm and curiosity reinforced my belief that learning becomes meaningful when students are allowed to explore, collaborate, and have fun. The two days of the Science Fest also strengthened my confidence in facilitating activities for large groups of learners.", [["24_1", "Science Fest schedule for the Grade 8 sections"], ["24_2", "Learners engaged in hands-on activities and interactive booths"], ["25_1", "Learners engaged in hands-on activities and interactive booths"], ["25_2", "Learners engaged in hands-on activities and interactive booths"], ["26_1", "Learners engaged in hands-on activities and interactive booths"], ["26_2", "Learners engaged in hands-on activities and interactive booths"], ["27_1", "Learners engaged in hands-on activities and interactive booths"], ["28_1", "Station 6 (Eco-Line Match) facilitated by pre-service teachers"], ["28_2", "Station 6 (Eco-Line Match) facilitated by pre-service teachers"]]], ["2026-9-29", "set", "Since my cooperating teacher was absent, I stepped in to supervise the class during the Science lesson. The learners were seated in the multimedia classroom and took notes as the lesson on the television monitor presented elements such as carbon, nitrogen, and oxygen. I facilitated the activities, monitored their participation, and made sure that everyone remained engaged.\n\nTaking on this responsibility pushed me out of my comfort zone and taught me the importance of being prepared, calm, and attentive to learners\u2019 needs.", [["29_1", "Learners taking notes during the Science lesson"], ["30_1", "Learners taking notes during the Science lesson"], ["31_1", "Science lesson on elements displayed on the television monitor"], ["32_1", "Science lesson on elements displayed on the television monitor"]]], ["2026-9-30", "set", "The learners watched educational video lessons, including clips from the series Cells at Work, on the interactive television monitor as part of a lesson on biological concepts and the circulatory system. I observed how media can capture learners\u2019 attention and make complex ideas more relatable.\n\nI also supervised classroom arrangements that varied from traditional wooden desks to group floor seating and multimedia chairs, adjusting my position and attention so that learners remained focused during the lesson. This experience taught me that classroom management must be flexible and that digital media, when used purposefully, can strengthen instruction.", [["33_1", "Learners watching an educational video lesson"], ["34_1", "Learners watching an educational video lesson"], ["35_1", "Supervising learners during media-assisted instruction"], ["36_1", "Supervising learners during media-assisted instruction"], ["37_1", "Supervising learners during media-assisted instruction"]]], ["2026-10-1", "set", "I facilitated the Grade 8 Science Quiz Bee in the multimedia classroom. I assisted in organizing the quiz materials, displayed the quiz rounds (the Easy Round, the Tricky Questions, and the Average Round), and monitored the participating contestants. I also supervised the learners as they wrote their answers during the competition rounds and ensured that the contest was conducted fairly and in an orderly manner.\n\nAt the end of the event, we gathered with the teachers, facilitators, and participants for a celebratory group photograph. The quiz bee showed me how friendly competition can motivate learners to review and appreciate science, and it gave me valuable practice in managing a contest.", [["38_1", "Grade 8 Science Quiz Bee in the multimedia classroom"], ["39_1", "Grade 8 Science Quiz Bee in the multimedia classroom"], ["40_1", "Grade 8 Science Quiz Bee in the multimedia classroom"], ["41_1", "Group photograph with teachers, facilitators, and participants after the Quiz Bee"], ["41_2", "Group photograph with teachers, facilitators, and participants after the Quiz Bee"]]], ["2026-10-5", "set", "The day was dedicated to the Science Month Culminating and Awarding Ceremony. Before the program, my fellow pre-service teachers and I prepared the raffle entries, cut the prize stubs, and organized the ticket boxes in the faculty office. During the day, we also checked the learners\u2019 assignments and noticed that some had not completed their homework. A minor incident involving a learner\u2019s lost money also occurred, and Ms. Reycelle handled it professionally and with care, which showed me how a teacher responds to unexpected situations with calmness and fairness.\n\nThe culminating program was held in the ISEC-SAS Laboratory, where the learners and faculty gathered for a recap of the Science Month highlights and the awarding of the competition winners. I was honored to receive a Certificate of Appreciation for my dedicated service and commitment in facilitating the Science Quest and contributing to Science Month 2026 at Taguig National High School. We took a group photograph with our fellow student teachers holding our certificates. The recognition motivated me to continue serving with dedication and humility.", [["42_1", "Preparing raffle entries and prize stubs in the faculty office"], ["43_1", "Preparing raffle entries and prize stubs in the faculty office"], ["44_1", "Gathering of learners and faculty before the program"], ["45_1", "Science Month Culminating Ceremony in the ISEC-SAS Laboratory"], ["46_1", "Science Month Culminating Ceremony in the ISEC-SAS Laboratory"], ["47_1", "Certificate of Appreciation, Science Month 2026"], ["48_1", "Group photograph with fellow student teachers holding their certificates"], ["49_1", "Group photograph with fellow student teachers holding their certificates"], ["49_2", "Group photograph with fellow student teachers holding their certificates"], ["50_1", "Group photograph with fellow student teachers holding their certificates"]]], ["2026-10-6", "set", "I observed Ms. Reycelle, my cooperating teacher, as she conducted a Science lesson on subatomic particles, atomic numbers, and chemical elements using the interactive display board. I noticed how she made challenging topics clear, engaging, and accessible, and how she connected the lesson to other subjects. I also monitored the learners\u2019 participation and listening during the discussion.\n\nAfter the class, she shared teaching tips and insights on instruction and classroom management, which I deeply appreciated. During the day, she also addressed a disciplinary matter involving learners who had cut classes by directing them to report to the faculty office. Observing how she balanced firmness with care helped me understand what professional and compassionate classroom leadership looks like.", [["51_1", "Observing Ms. Reycelle\u2019s Science lesson"], ["52_1", "Observing Ms. Reycelle\u2019s Science lesson"], ["53_1", "Observing Ms. Reycelle\u2019s Science lesson"]]], ["2026-10-7", "set", "Because Ms. Reycelle was absent due to a personal family matter, I assumed responsibility for facilitating the class sessions and administering the 1st Summative Test. I supervised the learners across the sections handled, ensuring the integrity of the test, maintaining their focus, and monitoring them as they completed their test papers.\n\nThis responsibility was both challenging and rewarding, and it helped me grow in confidence, vigilance, and accountability as a pre-service teacher.", [["54_1", "Supervising learners during the 1st Summative Test"], ["55_1", "Supervising learners during the 1st Summative Test"], ["56_1", "Supervising learners during the 1st Summative Test"], ["57_1", "Supervising learners during the 1st Summative Test"], ["58_1", "Supervising learners during the 1st Summative Test"], ["59_1", "Supervising learners during the 1st Summative Test"]]], ["2026-10-8", "set", "I continued to facilitate the Grade 8 Science classes and the administration of the 1st Summative Test, since Ms. Reycelle remained absent. I supervised the learners during the continuation of the test, displayed the Periodic Table and the reference materials on the screen, kept the classroom orderly, and organized the test papers for grading.\n\nBy the end of the day, I felt a deeper sense of responsibility and gratitude for the trust given to me in the classroom.", [["60_1", "Test paper inspection and organization"], ["61_1", "Supervising the continuation of the 1st Summative Test"], ["62_1", "Supervising the continuation of the 1st Summative Test"], ["63_1", "Supervising the continuation of the 1st Summative Test"], ["64_1", "Supervising the continuation of the 1st Summative Test"]]]],WK={"1": {"obs": ["The cooperating teacher began the class with a short recall", "During the second week, I observed the morning flag ceremony, classroom lectures supported by an interactive display, and learners\u2019 group presentations in the laboratory classroom. I also observed a lesson from the back of the classroom and noted how the teacher used the interactive screen and how the learners responded. During the Science Fest, I observed how interactive stations, games, and hands-on activities motivated learners to participate."], "part": "I checked learners\u2019 papers, encoded records in a digital spreadsheet, and helped prepare teaching aids with my fellow pre-service teachers. During the Science Fest on September 23 and 24, I facilitated Station 6, the card-matching Eco-Line Match activity.", "refl": ["This week showed me that connecting concepts", "This week showed me the many roles of a teacher, from record-keeping and preparing instructional materials to facilitating learning activities. The Science Fest taught me that learners engage deeply with science when it is presented through play and collaboration. I also learned that preparation, clear instructions, and teamwork are essential in managing activities with many learners. I hope to continue developing my confidence in guiding learners."]}, "2": {"obs": ["The teacher conducted a demonstration on balanced", "I observed Science lessons supported by television monitors and educational videos, including clips on the circulatory system, and noted how media captured learners\u2019 attention. I also observed different seating arrangements and how they affected learners\u2019 focus during lessons."], "part": "I stepped in to supervise the class during my cooperating teacher\u2019s absence on September 29, supervised learners during the film viewing on September 30, and facilitated the Grade 8 Science Quiz Bee on October 1 by organizing materials, displaying the quiz rounds, and monitoring the contestants.", "refl": ["I learned that group activities encourage", "This week challenged me to take on more responsibility in the classroom. Supervising the class without my cooperating teacher taught me the importance of preparation, calmness, and flexibility, while facilitating the Quiz Bee showed me how friendly competition can motivate learners to review and enjoy science. I am grateful for these opportunities because they helped me grow in confidence and accountability."]}, "3": {"obs": ["The lesson focused on Newton", "I observed the Science Month Culminating and Awarding Ceremony and my cooperating teacher\u2019s lesson on subatomic particles, atomic numbers, and chemical elements. I noted her clear explanations, her connections to other subjects, and the way she handled learners\u2019 behavior with firmness and care."], "part": "I prepared raffle entries for the Science Month closing program, checked learners\u2019 assignments, and assisted in the program. I received a Certificate of Appreciation for facilitating the Science Quest. On October 7 and 8, I assumed responsibility for facilitating classes and administering the 1st Summative Test while my cooperating teacher was absent.", "refl": ["This week reminded me that learners have diverse", "This week was both fulfilling and demanding. Receiving the Certificate of Appreciation reminded me that dedicated service is recognized, while observing my cooperating teacher taught me practical strategies in lesson delivery and classroom management. Administering the 1st Summative Test on my own helped me grow in responsibility, vigilance, and confidence. I plan to keep improving my communication with learners and my readiness for independent teaching."]}};
+ DAYS.forEach(function(D){var pn=document.querySelector('.dr[data-d="'+D[0]+'"]');if(!pn)return;
+  var nf=pn.querySelector('.f');
+  if(nf){if(D[1]==='set'){if(!nf.textContent.trim())nf.textContent=D[2]}else if(nf.textContent.indexOf(D[2].trim().slice(0,30))<0)nf.textContent=nf.textContent.replace(/\s+$/,'')+D[2]}
+  var box=pn.querySelector('.photos');if(!box)return;var add=box.querySelector('label');
+  D[3].forEach(function(x){if(box.querySelector('img[data-k="p'+x[0]+'"]'))return;
+   var fg=document.createElement('figure');fg.innerHTML='<img alt="" data-k="p'+x[0]+'"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the picture"></figcaption>';
+   fg.querySelector('img').src=IMG[x[0]];fg.querySelector('figcaption').textContent=x[1];box.insertBefore(fg,add)})});
+ var cards=document.querySelectorAll('#weeks .card');
+ Object.keys(WK).forEach(function(i){var c=cards[i],w=WK[i];if(!c)return;
+  c.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(!l||!f)return;var t=l.textContent,x=f.textContent;
+   if(t==='Classroom Observations (Field Study 1)'&&(!x.trim()||x.indexOf(w.obs[0])===0))f.textContent=w.obs[1];
+   else if(t==='Participation and Assigned Tasks (Field Study 2)'&&!x.trim())f.textContent=w.part;
+   else if(t==='Weekly Reflection'&&(!x.trim()||x.indexOf(w.refl[0])===0))f.textContent=w.refl[1]})});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var K='tcu-fs-up-certs5',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var pds=document.getElementById('pds');if(!pds)return;
+ var C=[{"k": "cert3", "a": "Certificate of Recognition \u2013 Class Standing and Midterm Examination", "b": "November 5, 2024", "c": "Awarded by the College of Education of Taguig City University and signed by Prof. Jeo J. Maniulit, Assistant Professor I and lecturer of Living in the IT Era, in recognition of my dedication, commitment, and proficiency in class standing and the midterm examination, showing a deep understanding of the subject matter, creativity, and critical thinking skills.", "d": "This recognition taught me that consistent effort, active participation, and critical thinking lead to meaningful academic results. It motivates me to keep a high standard of learning, which I hope to pass on to my future learners.", "cap": "Certificate of Recognition \u2013 Class Standing and Midterm Examination (November 5, 2024)"}, {"k": "cert4", "a": "Certificate of Achievement \u2013 Technology for Teaching and Learning 1 (Final Grade: 90.74)", "b": "January 14, 2025 (First Semester, Academic Year 2024\u20132025)", "c": "I was recognized for garnering a final grade of 90.74 in Technology for Teaching and Learning 1 for the First Semester of Academic Year 2024\u20132025, in recognition of exceptional academic performance and dedication shown in the course. The certificate was signed by Prof. Jaser Joy D. Placeros, LPT, MAEd, the course instructor.", "d": "This achievement strengthened my understanding of how technology can support teaching and learning. It prepared me to use digital tools, such as the interactive displays I now see in my field study classrooms, in meaningful ways when I teach.", "cap": "Certificate of Achievement \u2013 Technology for Teaching and Learning 1 (January 14, 2025)"}, {"k": "cert5", "a": "Certificate of Recognition \u2013 Completion of the First Semester, Academic Year 2024\u20132025", "b": "First Semester, Academic Year 2024\u20132025", "c": "Presented by the class officers of the Bachelor of Secondary Education, Major in Science (A2023), Ms. Allyza Mae H. Rabe (Class President/Representative) and Mr. James Simoun Odin (Class Vice President), in recognition of the courage I showed in finishing the first semester of Academic Year 2024\u20132025.", "d": "This recognition reminded me that perseverance and the support of classmates help a student get through a demanding semester. It inspires me to keep going and to encourage my future learners to keep trying.", "cap": "Certificate of Recognition \u2013 First Semester, Academic Year 2024\u20132025"}, {"k": "cert6", "a": "Certificate of Appreciation \u2013 Learning Facilitator, 20-day Tara, Basa! Tutoring Program", "b": "May 29, 2026", "c": "I served as a Learning Facilitator during the 20-day Tara, Basa! Tutoring Program, a program of DSWD and DepEd, held at Ricardo P. Cruz Sr. Elementary School. The certificate was signed by Marieta T. Junio, Principal II of the school.", "d": "Tutoring young learners taught me patience, clear communication, and the importance of meeting learners where they are. The experience strengthened my confidence in guiding learners and prepared me for my field study deployment.", "cap": "Certificate of Appreciation \u2013 Learning Facilitator, Tara, Basa! Tutoring Program (May 29, 2026)"}, {"k": "cert7", "a": "Certificate of Appreciation \u2013 Science Quest Facilitator, Science Month 2026", "b": "October 5, 2026", "c": "Presented to me as a Student Teacher at Taguig National High School for my dedicated service and commitment in facilitating the Science Quest, which contributed to the organization, success, and meaningful celebration of Science Month 2026. The certificate was signed by Reema M. Pacalundo (Science Club Adviser), Camille L. De Guzman (Science Club Co-adviser), Lydia H. Pasicolan (Head Teacher III, Science), and Nolito R. Estilles (Principal II).", "d": "Facilitating the Science Quest showed me how organization, teamwork, and initiative bring a school activity to life. It also taught me to make science engaging for learners through games and hands-on tasks, a skill I want to keep developing.", "cap": "Certificate of Appreciation \u2013 Science Quest Facilitator, Science Month 2026 (October 5, 2026)"}],keys={a:'a. Title of the Activity',b:'b. Date',c:'c. Brief Description',d:'d. Reflection'};
+ function findCard(k){var im=pds.querySelector('img[data-k="'+k+'"]');return im?im.closest('.card'):null}
+ function make(e){var t=document.createElement('div');t.innerHTML=pd();var nc=t.firstElementChild;
+  nc.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(!l||!f)return;
+   Object.keys(keys).forEach(function(k){if(l.textContent===keys[k])f.textContent=e[k]})});
+  var box=nc.querySelector('.pcert'),add=box.querySelector('label'),fg=document.createElement('figure');
+  fg.innerHTML='<img alt="" data-k="'+e.k+'"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the certificate"></figcaption>';
+  fg.querySelector('img').src=IMGDB[e.k];fg.querySelector('figcaption').textContent=e.cap;box.insertBefore(fg,add);return nc}
+ var c1=findCard('cert1'),c2=findCard('cert2'),first=pds.firstElementChild;
+ [0,1,2].forEach(function(i){pds.insertBefore(make(C[i]),c1||first)});
+ pds.insertBefore(make(C[3]),c2||(c1?c1.nextElementSibling:null));
+ var after=c2?c2.nextElementSibling:null;pds.insertBefore(make(C[4]),after);
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+enhance=function(){var roots=[],sc=document.querySelectorAll('.pane')[3];if(sc)roots.push(sc);
+ document.querySelectorAll('#weeks .card').forEach(function(c){roots.push(c)});
+ roots.forEach(function(r){var g=r.querySelector('.grid');if(g&&!g.querySelector('.addf'))g.insertAdjacentHTML('beforeend','<div class="fld full addf"><button class="btn" data-addf>+ Add field</button></div>')})};
+(function(){var KEEP={'School Facilities':1,'Photographs (where permitted)':1,'Photo Documentation with Captions':1,'e. Photo Documentation':1,'f. Certificates and Recognitions':1,'Narrative of the day':1};
+ document.querySelectorAll('#app .fld').forEach(function(fl){if(fl.classList.contains('cf'))return;var l=fl.querySelector(':scope>label'),ph=fl.querySelector(':scope>.photos');
+  if(!l||!ph||KEEP[l.textContent]||ph.querySelector('figure'))return;ph.remove()});
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');
+  if(l&&f&&l.textContent==='Brief Biography'&&f.textContent.indexOf('participant in the Tara Bara Tutoring Program')>=0)
+   f.textContent=f.textContent.replace('She is also a participant in the Tara Bara Tutoring Program','She also served as a Learning Facilitator in the 20-day Tara, Basa! Tutoring Program')});
+ enhance();persist()})();
+
+(function(){var K='tcu-fs-up-jr12',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var DAYS=[["2026-10-12", "Today I administered the scheduled summative test to the class. I supervised the testing environment, checked the answer scripts afterward, and recorded the resulting marks in the grading sheet. Because my critique teacher was absent, I also covered all classroom operations and supervisory duties throughout the day. In between, I retrieved the printer from the guidance office on behalf of the Grade 8 Science teacher.\n\nThe day required me to step fully into an independent teaching and management role. Leading the classroom alone gave me a valuable opportunity to sustain an orderly test environment and to complete academic record-keeping with accuracy. Balancing my instructional responsibilities with administrative errands, such as coordinating between departments to retrieve equipment, showed me the many sides of daily school life and the value of being adaptable and proactive.", [[0, "Retrieving the printer from the guidance office for the Grade 8 Science teacher"], [1, "Supervising the summative test"], [2, "Supervising the summative test"], [3, "Preparing materials at the faculty desk"], [4, "Classroom coverage during the critique teacher\u2019s absence"]]], ["2026-10-13", "Our topic today was Electron Configuration in Chemistry. Since the regular critique teacher was absent, the Science Department Head, Ma\u2019am Lydia Pasicolan, led the first class section. I observed her instructional delivery and classroom facilitation closely and compared her techniques with the established style of Ma\u2019am Reycelle. I paid particular attention to her deliberate and structured use of questioning, which guided learners through difficult concepts and kept the discussion alive.\n\nI then assumed the primary teaching duties for the remaining sections and delivered the full lesson on Electron Configuration, applying adjusted delivery strategies. Observing Ma\u2019am Lydia showed me that the quality and pacing of a teacher\u2019s questions determine how deeply learners process abstract ideas such as energy levels and orbitals. When I used similar questioning methods in my own classes, moving from foundational recall to analytical reasoning, I noticed clearer participation and better understanding among the learners.", [[5, "Learners participating in the Electron Configuration lesson"]]], ["2026-10-14", "Today we continued the topic on Electron Configuration and moved on to assessment. I prepared and facilitated a quiz to evaluate the learners\u2019 mastery of the concepts. After the quiz, I continued the discussion, elaborated on the more complex parts of the topic, and answered the learners\u2019 questions.\n\nFacilitating both the quiz and the continuation of the lesson allowed me to teach in response to what the learners showed me. Observing how they performed during the quiz helped me identify the areas that needed further clarification, so that I could focus the discussion on reinforcing the key concepts of electron configuration.", [[6, "Facilitating the lesson on Electron Configuration"], [7, "Learners taking the quiz on Electron Configuration"]]], ["2026-10-15", "Today\u2019s lesson on Electron Configuration was taught across different sections. Ma\u2019am Lydia Pasicolan, the Science Department Head, taught the higher section as a guest instructor, while I facilitated and taught the discussion for the remaining sections. I noticed a significant difference in learning pace between sections: the learners in the higher section grasped the abstract concepts quickly, whereas those in the other sections had difficulty following the standard pace of the discussion.\n\nThis experience showed me the importance of differentiated instruction. A single teaching approach cannot serve every learner. Fast learners thrive on rapid pacing and direct questioning, while learners who struggle need step-by-step scaffolds, visual aids, and interactive activities. In my next lessons, I plan to break electron notation into smaller visual parts, use analogies, and provide guided practice so that all sections can take part meaningfully and understand the topic.", [[8, "Quiz on Electron Configuration"], [9, "Ma\u2019am Lydia Pasicolan teaching the higher section"], [10, "Learner solving on the board during the lesson"], [11, "Discussion on the principal energy level"]]], ["2026-10-19", "The critique teacher was still absent, so I covered the full teaching duties today. Before the main discussion, I introduced an interactive educational game to activate the learners\u2019 interest and warm up the class. I then continued the core Chemistry lesson and administered a short quiz after the discussion to assess what the learners had learned.\n\nDuring the game-based activities, I noticed contrasting dynamics between sections. One section became very loud and challenging to manage and needed firmer control, while another remained orderly, cooperative, and easy to facilitate. The experience taught me that game-based learning increases engagement, but energetic sections need clear rules, boundaries, and structured turn-taking to prevent disruption. Balancing fun with classroom discipline will be important in my future interactive activities.", [[12, "Discussion on the principal energy level"], [13, "Learners participating in the activity outdoors"], [14, "Learners during the post-discussion quiz"]]], ["2026-10-20", "The critique teacher was absent once again, so I managed the class independently. I facilitated the continuation of the Chemistry discussion and made sure the key concepts were clearly explained. I then guided the learners through a hands-on and written classroom activity so they could apply and strengthen their understanding of the topic.\n\nLeading both the discussion and the student activity strengthened my ability to structure class time on my own. Moving smoothly from direct instruction to an active learner task helped keep the class focused and allowed me to monitor each learner\u2019s progress in real time.", [[15, "Preparing for the lesson at the faculty desk"], [16, "Learners working on the classroom activity"]]], ["2026-10-21", "Our lesson today was on periodic table trends. I began the class by going over and answering the previous day\u2019s assignment with the learners before moving to the new discussion. I then led the discussion on periodic table trends, involving the learners through board work and interactive participation. During my vacant periods, I designed and created presentation slides for my upcoming lessons.\n\nReviewing assignments together before introducing new concepts builds a solid bridge for learners, because it clears up misconceptions early and sets a confident tone for the main discussion. Using vacant time wisely to prepare instructional materials also leads to smoother lesson delivery and better visual aids for future classes.", [[17, "Learners doing board work on periodic table trends"], [18, "Preparing presentation slides during a vacant period"]]]],WK={"4": {"obs": "I observed Science Department Head Lydia Pasicolan teach Electron Configuration and paid close attention to her structured use of questioning, which I compared with the established style of Ma\u2019am Reycelle. I also noticed clear differences in learning pace between sections.", "part": "With my critique teacher absent, I administered and checked the summative test and recorded the marks on October 12. From October 13 to 15, I taught the lesson on Electron Configuration to several sections, facilitated a quiz, and retrieved equipment for the Grade 8 Science teacher.", "refl": "This week pushed me to teach and manage a class on my own. Observing Ma\u2019am Lydia showed me how strategic questioning deepens learners\u2019 understanding, and teaching different sections taught me that instruction must be differentiated to meet the needs of every learner. Administering the summative test and recording the marks strengthened my accuracy and sense of responsibility. In the coming week, I will use more visual aids and guided practice so that all learners can follow the lesson."}, "5": {"obs": "My critique teacher remained absent, so my observations this week centered on classroom dynamics. I noticed how one section became loud during a game while another stayed orderly, and how learners respond when an activity moves from instruction to hands-on tasks.", "part": "On October 19 and 20, I covered full teaching duties, introduced a game-based warm-up, continued the Chemistry lesson, administered a quiz, and guided a classroom activity. On October 21, I reviewed the previous assignment, led the discussion on periodic table trends, and prepared presentation slides during my vacant periods.", "refl": "This week taught me that engaging activities must be balanced with clear rules and structure, especially for energetic sections. Leading the lesson, the quiz, and the learner activity on my own improved my time management and my ability to monitor learners\u2019 progress. Preparing slides during vacant periods also showed me how planning makes lessons smoother. I will continue to refine my classroom management and my instructional materials."}};
+ DAYS.forEach(function(D){var pn=document.querySelector('.dr[data-d="'+D[0]+'"]');if(!pn)return;
+  var nf=pn.querySelector('.f');if(nf&&!nf.textContent.trim())nf.textContent=D[1];
+  var box=pn.querySelector('.photos'),add=box&&box.querySelector('label');if(!box)return;
+  D[2].forEach(function(x){var k='jr'+x[0];if(box.querySelector('img[data-k="'+k+'"]'))return;
+   var fg=document.createElement('figure');fg.innerHTML='<img alt="" data-k="'+k+'"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the picture"></figcaption>';
+   fg.querySelector('img').src=IMGDB[k];fg.querySelector('figcaption').textContent=x[1];box.insertBefore(fg,add)})});
+ var cards=document.querySelectorAll('#weeks .card');
+ Object.keys(WK).forEach(function(i){var c=cards[i],w=WK[i];if(!c)return;
+  c.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(!l||!f)return;var x=f.textContent.trim(),ex=/^(The class performed a simple laboratory|The teacher used a review game|In the final week|Observing the laboratory activity helped|I observed that learning games can increase|This final week made me realize)/.test(x);if(x&&!ex)return;
+   if(l.textContent==='Classroom Observations (Field Study 1)')f.textContent=w.obs;
+   else if(l.textContent==='Participation and Assigned Tasks (Field Study 2)')f.textContent=w.part;
+   else if(l.textContent==='Weekly Reflection')f.textContent=w.refl})});
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');
+  if(l&&l.textContent==='Professional Photo'){var sl=fl.querySelector('.pp');if(sl){sl.style.backgroundImage="url('assets2/img156.png')";sl.style.backgroundPosition='center top';sl.classList.add('has')}}
+  if(!l||!f)return;
+  if(l.textContent==='Organizational Structure'){
+   if(!f.textContent.trim()||/^School Principal/.test(f.textContent))f.textContent="Taguig National High School \u2013 Science Department\n\nNolito R. Estiles \u2013 Principal II\nOfelia D. Mabao \u2013 Assistant Principal\nLydia H. Pasicolan \u2013 Head Teacher III (Science Department Head)\n\nGrade 10 Science: Camille L. De Guzman (Teacher II); Merlin Favia (Master Teacher I)\nSenior High School Science: Catalina B. Maullin (Teacher VII)\nGrade 9 Science: Agape Grace D. Rivera (Master Teacher I); Angelica Faye Abay (Teacher 2); Reema M. Paculundo (Teacher I)\nGrade 8 Science: Reycelle E. San Pedro (Teacher II); Lita A. Gacutin (Teacher III)\nGrade 7 Science: Nora B. Camiloza (Teacher II); Arlene C. Tomas (Teacher III)";
+   if(!fl.querySelector(':scope>.photos'))fl.insertAdjacentHTML('beforeend',PICS);
+   var box=fl.querySelector(':scope>.photos');
+   if(box&&!box.querySelector('img[data-k="org1"]')){var fg=document.createElement('figure');fg.className='org';
+    fg.innerHTML='<img alt="" data-k="org1"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the picture"></figcaption>';
+    fg.querySelector('img').src=IMGDB.org1;fg.querySelector('figcaption').textContent='Organizational structure of the Science Department, Taguig National High School';box.insertBefore(fg,box.querySelector('label'))}}
+  
+  if(l.textContent==='Brief Description'||/^c\. Brief Description/.test(l.textContent)){}});
+ document.querySelectorAll('#pds .card').forEach(function(c){var im=c.querySelector('img[data-k="cert7"]');if(!im)return;
+  c.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');
+   if(l&&f&&/^c\. Brief Description/.test(l.textContent)&&f.textContent.indexOf('Reema M. Pacalundo (Science Club Adviser)')>=0)
+    f.textContent=f.textContent.replace('Reema M. Pacalundo (Science Club Adviser)','Reema M. Pacalundo (Science Club Adviser, Grade 9 Science teacher)').replace('Camille L. De Guzman (Science Club Co-adviser)','Camille L. De Guzman (Science Club Co-adviser, Grade 10 Science teacher)').replace('Lydia H. Pasicolan (Head Teacher III, Science)','Lydia H. Pasicolan (Head Teacher III, Science Department)')})});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var R=[{"k": "cert3", "a": "Certificate of Recognition – Class Standing and Midterm Examination", "b": "November 5, 2024", "c": "Awarded by the College of Education of Taguig City University and signed by Prof. Jeo J. Maniulit, Assistant Professor I and lecturer of Living in the IT Era, in recognition of my dedication, commitment, and proficiency in class standing and the midterm examination, showing a deep understanding of the subject matter, creativity, and critical thinking skills.", "d": "This recognition taught me that consistent effort, active participation, and critical thinking lead to meaningful academic results. It motivates me to keep a high standard of learning, which I hope to pass on to my future learners.", "cap": "Certificate of Recognition – Class Standing and Midterm Examination (November 5, 2024)"}, {"k": "cert4", "a": "Certificate of Achievement – Technology for Teaching and Learning 1 (Final Grade: 90.74)", "b": "January 14, 2025 (First Semester, Academic Year 2024–2025)", "c": "I was recognized for garnering a final grade of 90.74 in Technology for Teaching and Learning 1 for the First Semester of Academic Year 2024–2025, in recognition of exceptional academic performance and dedication shown in the course. The certificate was signed by Prof. Jaser Joy D. Placeros, LPT, MAEd, the course instructor.", "d": "This achievement strengthened my understanding of how technology can support teaching and learning. It prepared me to use digital tools, such as the interactive displays I now see in my field study classrooms, in meaningful ways when I teach.", "cap": "Certificate of Achievement – Technology for Teaching and Learning 1 (January 14, 2025)"}, {"k": "cert5", "a": "Certificate of Recognition – Completion of the First Semester, Academic Year 2024–2025", "b": "First Semester, Academic Year 2024–2025", "c": "Presented by the class officers of the Bachelor of Secondary Education, Major in Science (A2023), Ms. Allyza Mae H. Rabe (Class President/Representative) and Mr. James Simoun Odin (Class Vice President), in recognition of the courage I showed in finishing the first semester of Academic Year 2024–2025.", "d": "This recognition reminded me that perseverance and the support of classmates help a student get through a demanding semester. It inspires me to keep going and to encourage my future learners to keep trying.", "cap": "Certificate of Recognition – First Semester, Academic Year 2024–2025"}, {"k": "cert6", "a": "Certificate of Appreciation – Learning Facilitator, 20-day Tara, Basa! Tutoring Program", "b": "May 29, 2026", "c": "I served as a Learning Facilitator during the 20-day Tara, Basa! Tutoring Program, a program of DSWD and DepEd, held at Ricardo P. Cruz Sr. Elementary School. The certificate was signed by Marieta T. Junio, Principal II of the school.", "d": "Tutoring young learners taught me patience, clear communication, and the importance of meeting learners where they are. The experience strengthened my confidence in guiding learners and prepared me for my field study deployment.", "cap": "Certificate of Appreciation – Learning Facilitator, Tara, Basa! Tutoring Program (May 29, 2026)"}, {"k": "cert7", "a": "Certificate of Appreciation – Science Quest Facilitator, Science Month 2026", "b": "October 5, 2026", "c": "Presented to me as a Student Teacher at Taguig National High School for my dedicated service and commitment in facilitating the Science Quest, which contributed to the organization, success, and meaningful celebration of Science Month 2026. The certificate was signed by Reema M. Pacalundo (Science Club Adviser), Camille L. De Guzman (Science Club Co-adviser), Lydia H. Pasicolan (Head Teacher III, Science), and Nolito R. Estilles (Principal II).", "d": "Facilitating the Science Quest showed me how organization, teamwork, and initiative bring a school activity to life. It also taught me to make science engaging for learners through games and hands-on tasks, a skill I want to keep developing.", "cap": "Certificate of Appreciation – Science Quest Facilitator, Science Month 2026 (October 5, 2026)"}],pds=document.getElementById('pds');if(!pds)return;
+ var keys={a:'a. Title of the Activity',b:'b. Date',c:'c. Brief Description',d:'d. Reflection'};
+ R.forEach(function(e){var im=pds.querySelector('img[data-k="'+e.k+'"]');if(!im)return;var card=im.closest('.card');if(!card)return;
+  card.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(!l||!f||f.textContent.trim())return;
+   Object.keys(keys).forEach(function(k){if(l.textContent===keys[k]&&e[k])f.textContent=e[k]})});
+  var cap=card.querySelector('figcaption');if(cap&&!cap.textContent.trim()&&e.cap)cap.textContent=e.cap});
+ persist()})();
+
+(function(){var K='tcu-fs-up-masterclass1',d=null;try{d=localStorage.getItem(K)}catch(e){}
+ var pds=document.getElementById('pds');if(!pds)return;
+ var SIG=" The certificate was signed by Dr. Jeffrey Camacho-Bunquin (CEO and Founder, Filipino Science Hub) and Dr. Alfons Jayson Pelgone (Associate Dean, Philippine Normal University \u2013 Faculty of Science, Technology and Mathematics).";
+ var ORG="organized by the Filipino Science Hub and the Philippine Normal University \u2013 Faculty of Science, Technology and Mathematics, held online from 9:00 AM to 12:30 PM (PST). ";
+ var C=[
+ {k:"cert8",pos:"first",a:"Certificate of Participation \u2013 \u201cDOSTkubre: Discovering Science, Technology and Innovation (STI)-based Solutions\u201d",b:"April 3\u20135, 2024",
+  c:"I participated in DOSTkubre, a three-day activity of the Department of Science and Technology \u2013 National Capital Region (DOST-NCR) held at the DOST Compound in Bicutan, Taguig City, and at the Quezon City Science Community. The certificate was digitally signed by Regional Director Engr. Romelen T. Tresvalles.",
+  d:"Taking part in DOSTkubre showed me how science, technology, and innovation are used to solve real community problems. The experience inspired me to connect classroom science lessons to local innovations, so that my future learners can see that science is relevant to their daily lives and to nation-building.",
+  cap:"Certificate of Participation \u2013 DOSTkubre (April 3\u20135, 2024)"},
+ {k:"cert9",pos:"before:cert7",a:"Certificate of Attendance \u2013 \u201cHuman Body Systems (Endocrine)\u201d, Masterclass in Teaching Essential Science High School Content (Biology)",b:"August 15, 2026 (certificate given August 16, 2026)",
+  c:"I attended an online masterclass session on the endocrine system under the Masterclass in Teaching Essential Science High School Content (Biology), "+ORG.replace('held online','held online')+SIG.trim(),
+  d:"The session strengthened my content knowledge of the endocrine system, one of the essential Biology topics in the high school Science curriculum. It helped me think about how to explain hormones and body regulation clearly and how to link them to learners\u2019 everyday experiences, which I can apply when I teach Biology.",
+  cap:"Certificate of Attendance \u2013 Human Body Systems (Endocrine) (August 15, 2026)"},
+ {k:"cert10",pos:"before:cert7",a:"Certificate of Attendance \u2013 \u201cAI-Assisted Contextualized Masterclass on Ecosystem Dynamics: Components, Interactions and Environmental Change\u201d",b:"August 22, 2026 (certificate given August 25, 2026)",
+  c:"I attended an online masterclass on ecosystem dynamics under the Masterclass in Teaching Essential Science High School Content (Biology), "+ORG+SIG.trim(),
+  d:"The session showed me how ecosystems can be taught through their components, interactions, and environmental change, and how AI tools can help teachers contextualize lessons to learners\u2019 local surroundings. Because I am interested in environmental science, it gave me ideas for lessons that encourage learners to understand and care for their environment.",
+  cap:"Certificate of Attendance \u2013 AI-Assisted Contextualized Masterclass on Ecosystem Dynamics (August 22, 2026)"},
+ {k:"cert11",pos:"before:cert7",a:"Certificate of Attendance \u2013 \u201cGenetics\u201d, Masterclass in Teaching Essential Science High School Content (Biology)",b:"September 5, 2026 (certificate given September 7, 2026)",
+  c:"I attended an online masterclass session on Genetics under the Masterclass in Teaching Essential Science High School Content (Biology), "+ORG+SIG.trim(),
+  d:"The Genetics session refreshed my understanding of heredity and inheritance and showed me ways of making these abstract ideas easier for learners to grasp, such as worked examples and guided problem-solving. I plan to use these approaches when I teach Biology.",
+  cap:"Certificate of Attendance \u2013 Genetics (September 5, 2026)"},
+ {k:"cert12",pos:"after:cert7",a:"Certificate of Attendance \u2013 \u201cElectricity and Magnetism\u201d, Masterclass in Teaching Essential Science High School Content (Physics)",b:"October 10, 2026 (certificate given October 12, 2026)",
+  c:"I attended an online masterclass session on Electricity and Magnetism under the Masterclass in Teaching Essential Science High School Content (Physics), "+ORG+SIG.trim(),
+  d:"This session broadened my content knowledge beyond my Biology and Chemistry experiences and reminded me that a Science teacher must be ready to teach all science areas. It gave me a clearer way to explain electric and magnetic concepts, which I can use in my future lessons.",
+  cap:"Certificate of Attendance \u2013 Electricity and Magnetism (October 10, 2026)"},
+ {k:"cert13",pos:"after:cert12",a:"Certificate of Attendance \u2013 \u201cWork, Energy, and Power\u201d, Masterclass in Teaching Essential Science High School Content (Physics)",b:"October 17, 2026 (certificate given October 19, 2026)",
+  c:"I attended an online masterclass session on Work, Energy, and Power under the Masterclass in Teaching Essential Science High School Content (Physics), "+ORG+SIG.trim(),
+  d:"The session helped me understand how work, energy, and power can be explained using everyday situations and simple computations. It strengthened my confidence in teaching Physics topics and will guide how I plan clear, step-by-step lessons for learners.",
+  cap:"Certificate of Attendance \u2013 Work, Energy, and Power (October 17, 2026)"}];
+ var keys={a:'a. Title of the Activity',b:'b. Date',c:'c. Brief Description',d:'d. Reflection'};
+ function findCard(k){var im=pds.querySelector('img[data-k="'+k+'"]');return im?im.closest('.card'):null}
+ function make(e){var t=document.createElement('div');t.innerHTML=pd();var nc=t.firstElementChild;
+  nc.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(!l||!f)return;
+   Object.keys(keys).forEach(function(k){if(l.textContent===keys[k])f.textContent=e[k]})});
+  var box=nc.querySelector('.pcert'),add=box.querySelector('label'),fg=document.createElement('figure');
+  fg.innerHTML='<img alt="" data-k="'+e.k+'"><button class="x" data-del>\u00d7</button><figcaption contenteditable="true" data-ph="Type the name of the certificate"></figcaption>';
+  fg.querySelector('img').src=IMGDB[e.k];fg.querySelector('figcaption').textContent=e.cap;box.insertBefore(fg,add);return nc}
+ if(!d){C.forEach(function(e){if(findCard(e.k))return;var nc=make(e),ref=null,p=e.pos;
+  if(p==='first')ref=pds.firstElementChild;
+  else if(p.indexOf('before:')===0){ref=findCard(p.slice(7))}
+  else if(p.indexOf('after:')===0){var c=findCard(p.slice(6));ref=c?c.nextElementSibling:null}
+  pds.insertBefore(nc,ref)})}
+ // remove empty template cards
+ Array.prototype.slice.call(pds.querySelectorAll(':scope>.card')).forEach(function(c){var fs=c.querySelectorAll('.f'),empty=true;
+  fs.forEach(function(f){if(f.textContent.trim())empty=false});if(empty&&!c.querySelector('figure'))c.remove()});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){var K='tcu-fs-up-weekfields1',d=null;try{d=localStorage.getItem(K)}catch(e){}if(d)return;
+ var W={
+ 1:{o:"",e:""},
+ 2:{o:"To observe classroom instruction supported by interactive technology and learners\u2019 group presentations; to assist in checking papers, encoding records, and preparing teaching aids; and to facilitate a learning station during the Science Fest.",
+    e:"Daily narrative reports with captioned photographs for September 21\u201324, 2026, including the Science Fest (Station 6 \u2013 Eco-Line Match); learners\u2019 papers checked, records encoded in a digital spreadsheet, and teaching aids prepared with my fellow pre-service teachers."},
+ 3:{o:"To observe how media-assisted instruction and different seating arrangements affect learners\u2019 focus; to supervise the class when my cooperating teacher is absent; and to help facilitate the Grade 8 Science Quiz Bee.",
+    e:"Daily narrative reports with captioned photographs for September 29 \u2013 October 1, 2026, including the lessons on the television monitor, the film viewing, and the Grade 8 Science Quiz Bee."},
+ 4:{o:"To take part in the Science Month culminating and awarding ceremony; to observe my cooperating teacher\u2019s lesson on subatomic particles, atomic numbers, and chemical elements; and to administer the 1st Summative Test when my cooperating teacher is absent.",
+    e:"Daily narrative reports with captioned photographs for October 5\u20138, 2026; raffle entries prepared for the Science Month closing program; Certificate of Appreciation for facilitating the Science Quest (see Professional Development and Activities)."},
+ 5:{o:"To observe the Science Department Head\u2019s lesson on Electron Configuration; to administer and check the summative test and record the marks; and to teach and facilitate learning activities for several sections.",
+    e:"Daily narrative reports with captioned photographs for October 12\u201315, 2026; summative test answer scripts checked and marks recorded in the grading sheet; quiz and lesson on Electron Configuration."},
+ 6:{o:"To manage the class independently using game-based and hands-on strategies; to continue the Chemistry lesson and lead the discussion on periodic table trends; and to prepare instructional slides during vacant periods.",
+    e:"Daily narrative reports with captioned photographs for October 19\u201321, 2026; post-discussion quiz and classroom activity; presentation slides prepared during vacant periods."},
+ 7:{o:"To complete my deployment at Taguig National High School by continuing to assist and teach under the guidance of my cooperating teacher, to consolidate what I learned from the previous weeks, and to reflect on my growth as a pre-service teacher.",
+    e:"Daily narrative reports for October 26\u201329, 2026 and the end-of-deployment documents listed in the Appendices."}};
+ document.querySelectorAll('#weeks>.card').forEach(function(c,i){var w=W[i+1];if(!w)return;
+  c.querySelectorAll(':scope>.grid>.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(!l||!f||f.textContent.trim())return;
+   if(l.textContent==='Learning Objectives'&&w.o)f.textContent=w.o;
+   else if(l.textContent==='Learning Evidences'&&w.e)f.textContent=w.e})});
+ try{localStorage.setItem(K,'1')}catch(e){}persist()})();
+
+(function(){
+ var I=window.IMGDB;
+ function fig(box,k,cap,cls){if(!box||box.querySelector('img[data-k="'+k+'"]'))return;var add=box.querySelector('label'),fg=document.createElement('figure');if(cls)fg.className=cls;
+  fg.innerHTML='<img alt="" data-k="'+k+'"><figcaption></figcaption>';fg.querySelector('img').src=I[k];fg.querySelector('figcaption').textContent=cap;box.insertBefore(fg,add)}
+ function day(k){return document.querySelector('.dr[data-d="'+k+'"]')}
+ var D={
+ "2026-9-28":{t:"No narrative or photo documentation was recorded for this day. My attendance on this day is reflected in the daily time record included in the Appendices.",p:[]},
+ "2026-10-22":{t:"The class continued the lesson on Periodic Table Trends. The slide on the interactive display introduced the topic, while the board still showed the electron configurations of argon and iron and drawings of atoms from the earlier lessons, which the teacher used to connect the trends to the structure of atoms. The learners copied notes and listened attentively during the discussion.\n\nSeeing how the earlier lessons on electron configuration were linked to periodic table trends showed me the value of building each lesson on the one before it. It also showed me that combining a slide presentation with board illustrations helps learners follow abstract ideas.",
+  p:[["d22a","Periodic Table Trends lesson on the interactive display, with electron configurations on the board"],["d22b","Learners taking notes during the lesson on periodic table trends"]]},
+ "2026-10-26":{t:"The lesson for today was Earth\u2019s Layers. I presented the slide showing the four layers of the Earth \u2013 the crust, the mantle, the liquid outer core, and the inner core \u2013 and discussed the description of each layer, including the thickness of the crust and the molten iron-nickel composition of the outer core. I asked questions throughout the discussion, and many learners raised their hands to answer.\n\nThe learners\u2019 eagerness to participate showed me that a clear visual and well-timed questions can keep a class involved. Standing in front of the class and responding to their answers also helped me grow more confident in explaining a lesson on my own.",
+  p:[["d26a","Discussing Earth\u2019s Layers while learners raise their hands to answer"],["d26b","Learners listening to the lesson on Earth\u2019s Layers"],["d26c","Presenting the four layers of the Earth to the class"]]},
+ "2026-10-27":{t:"Today I checked the learners\u2019 answer sheets for the Second Term 1st Summative Test in Grade 8 Science and recorded the scores in the class spreadsheet (attendance_master_list) on my tablet. I went through each paper carefully, wrote the score on the first page, and then encoded it so that the class record would be complete and accurate.\n\nThe task taught me that checking papers and recording scores demands patience, accuracy, and honesty, because these records reflect each learner\u2019s performance. It also showed me how technology, such as a spreadsheet, makes record-keeping faster and more organized.",
+  p:[["d27a","Checking the learners\u2019 answer sheets for the 1st Summative Test"],["d27b","Encoding the scores in the class spreadsheet on my tablet"]]},
+ "2026-10-28":{t:"The learners spent the day copying their reviewer for the 2nd Summative Test. The reviewer questions were shown on the interactive display, and the learners wrote them down in their notebooks while I monitored the class to make sure that everyone was copying properly and the room stayed orderly.\n\nThis activity showed me how a reviewer helps learners prepare for an assessment and why clear, readable materials matter. It also reminded me that guiding learners in their preparation is just as important as administering the test itself.",
+  p:[["d28a","Learners copying the reviewer for the 2nd Summative Test from the display"],["d28b","Learners writing the reviewer in their notebooks"]]},
+ "2026-10-29":{t:"Today marked the start of the learners\u2019 2nd Summative Test. The test papers were distributed, and the learners began answering quietly at their seats while I monitored the room to keep the testing environment orderly and honest.\n\nSupervising the start of the examination taught me the importance of clear instructions, vigilance, and a calm presence so that learners can focus on their work. It was a fitting way to close my deployment, because it let me see the full cycle of teaching, reviewing, and assessing learners.",
+  p:[["d29a","Learners answering the 2nd Summative Test"],["d29b","Learners working quietly at the start of the 2nd Summative Test"]]}};
+ Object.keys(D).forEach(function(k){var pn=day(k);if(!pn)return;var f=pn.querySelector('.f');if(f&&!f.textContent.trim())f.textContent=D[k].t;
+  var box=pn.querySelector('.photos');D[k].p.forEach(function(x){fig(box,x[0],x[1])})});
+ // week 6 / 7 fields
+ var cards=document.querySelectorAll('#weeks>.card');
+ function setF(c,label,txt,test){if(!c)return;c.querySelectorAll(':scope>.grid>.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(l&&f&&l.textContent===label&&(!f.textContent.trim()||(test&&test.test(f.textContent))))f.textContent=txt})}
+ var c6=cards[5];if(c6)c6.querySelectorAll(':scope>.grid>.fld').forEach(function(fl){var f=fl.querySelector(':scope>.f');if(f)f.textContent=f.textContent.replace('October 19\u201321, 2026','October 19\u201322, 2026')});
+ var c7=cards[6];
+ setF(c7,'Classroom Observations (Field Study 1)',"My observations this final week centered on how learners prepare for and take assessments. Learners responded eagerly to questions during the discussion on Earth\u2019s Layers, copied and studied a reviewer in preparation for their test, and worked quietly and in an orderly manner once the 2nd Summative Test began.",/^In the final week/);
+ setF(c7,'Participation and Assigned Tasks (Field Study 2)',"On October 26, I discussed the lesson on Earth\u2019s Layers. On October 27, I checked the learners\u2019 answer sheets for the 1st Summative Test and encoded the scores in the class spreadsheet. On October 28, I guided the learners as they copied the reviewer for the 2nd Summative Test, and on October 29, I supervised the start of the 2nd Summative Test.");
+ setF(c7,'Learning Evidences',"Daily narrative reports with captioned photographs for October 26\u201329, 2026; checked answer sheets and encoded scores; and the daily time record, endorsement letter, and evaluation form in the Appendices.");
+ setF(c7,'Weekly Reflection',"This final week showed me the whole cycle of assessment: teaching a lesson, preparing learners through a reviewer, checking papers and recording scores, and supervising the next test. I realized how much I have grown since my first day at Taguig National High School, especially in confidence, accuracy, and classroom management. I am grateful to my cooperating teacher, Ma\u2019am Reycelle E. San Pedro, and to the Science Department for guiding me, and I will carry these lessons into my future practice as a Science teacher.",/^This final week made me realize/);
+ // appendices
+ var A={"B":{n:"Daily time records (September 16\u201330, October 1\u201315, and October 16\u201329, 2026)",f:[["ap_dtr1","Daily time record \u2013 September 2026","doc nr"],["ap_dtr2","Daily time record \u2013 October 1\u201315, 2026","doc nr"],["ap_dtr3","Daily time record \u2013 October 16\u201329, 2026","doc nr"]]},
+  "D":{n:"1st Indorsement of the Schools Division of Taguig City and Pateros dated August 4, 2026, referring the pre-service teachers to Taguig National High School",f:[["ap_end","1st Indorsement, Department of Education \u2013 Schools Division of Taguig City and Pateros (August 4, 2026)","doc"]]},
+  "G":{n:"Teaching Internship Performance Rating Form accomplished by my cooperating teacher, Reycelle E. San Pedro \u2013 overall rating of 95 (Very Satisfactory)",f:[["ap_eval","Teaching Internship Performance Rating Form (overall rating: 95)","doc"]]}};
+ var NA="Not attached to this portfolio.";
+ document.querySelectorAll('.apps li').forEach(function(li){var b=li.querySelector('b'),f=li.querySelector('.f');if(!b||!f)return;var L=b.textContent.charAt(0);
+  if(A[L]){f.textContent=A[L].n;var box=li.querySelector('.photos');A[L].f.forEach(function(x){fig(box,x[0],x[1],x[2])})}else f.textContent=NA});
+})();
+
+(function(){ // Curriculum vitae as a link
+ var fl=null;document.querySelectorAll('#app .fld').forEach(function(x){var l=x.querySelector(':scope>label');if(l&&/^Curriculum Vitae/.test(l.textContent))fl=x});
+ if(!fl)return;fl.classList.add('cvf');
+ fl.innerHTML='<label>Curriculum Vitae</label><div class="cvbox"><a class="cvlink" href="'+IMGDB.cv1+'" data-lb="cv1">\ud83d\udcc4 View my Curriculum Vitae</a><a class="cvnew" href="'+IMGDB.cv1+'" target="_blank" rel="noopener">Open in a new tab \u2197</a></div>'})();
+
+(function(){ // lightbox
+ var lb=document.createElement('div');lb.id='lb';lb.hidden=true;lb.innerHTML='<button type="button" id="lbx" aria-label="Close">\u00d7</button><img alt="">';document.body.appendChild(lb);
+ function open(src){lb.querySelector('img').src=src;lb.hidden=false}
+ function close(){lb.hidden=true;lb.querySelector('img').removeAttribute('src')}
+ document.addEventListener('click',function(e){
+  var a=e.target.closest('[data-lb]');if(a){e.preventDefault();open(IMGDB[a.getAttribute('data-lb')]);return}
+  var im=e.target.closest('figure img');if(im&&im.src){open(im.src);return}
+  if(e.target.closest('#lb'))close()});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+})();
+
+(function(){ // Professional development entries and growth plan: formal rewrite
+ var OV="This section documents my participation in professional development programs, academic recognitions, extension and service activities, and institutional events of Taguig City University and Taguig National High School from 2024 to 2026. The thirteen entries are arranged chronologically and fall under four groups: (1) academic recognitions and class service, (2) extension and community engagement, (3) institutional and school-based activities, and (4) content-focused masterclasses in Biology and Physics. Each entry presents the title, date, description, and my reflection, together with the supporting certificate. Collectively, the entries show my continuing effort to strengthen my content knowledge, pedagogical skills, and professional values in line with the Philippine Professional Standards for Teachers (PPST), particularly Domain 1 (Content Knowledge and Pedagogy), Domain 3 (Diversity of Learners), and Domain 7 (Personal Growth and Professional Development).";
+ var E={
+ cert8:{c:"DOSTkubre was a three-day science, technology, and innovation (STI) activity organized by the Department of Science and Technology \u2013 National Capital Region (DOST-NCR) from April 3 to 5, 2024. It was held at the DOST Compound in Bicutan, Taguig City, and at the Quezon City Science Community, and was themed on discovering STI-based solutions. I participated as a student of the Bachelor of Secondary Education program, major in Science. The Certificate of Participation was digitally signed by Regional Director Engr. Romelen T. Tresvalles.",
+  d:"The activity showed me how scientific knowledge is translated into technologies and innovations that respond to community needs, which is the kind of application that the K to 12 Science curriculum seeks to develop in learners. It broadened my view of science beyond the classroom and made me aware of the programs of government science agencies that teachers may draw upon as learning resources. As a future Science teacher, I intend to use real-world applications and local innovations to contextualize my lessons, thereby addressing Domain 1 (Content Knowledge and Pedagogy) and Domain 4 (Curriculum and Planning) of the PPST. The experience also reminded me that teachers must keep abreast of developments in science and technology so that instruction remains relevant and meaningful."},
+ cert3:{c:"On November 5, 2024, I received a Certificate of Recognition from the College of Education of Taguig City University for my class standing and midterm examination performance in Living in the IT Era. The certificate was signed by Prof. Jeo J. Maniulit, Assistant Professor I and lecturer of the course, and cited my dedication, commitment, and proficiency, as well as my understanding of the subject matter, creativity, and critical thinking skills.",
+  d:"This recognition affirmed that consistent study habits, active class participation, and critical thinking produce meaningful academic results. It also reminded me that teachers are expected to model the learning behaviors they wish to see in their learners. I will continue to hold myself to a high academic standard, which aligns with Domain 7 (Personal Growth and Professional Development) of the PPST, and I intend to encourage my future learners to value effort, understanding, and creativity over mere compliance."},
+ cert4:{c:"I was awarded a Certificate of Achievement for earning a final grade of 90.74 in Technology for Teaching and Learning 1 during the First Semester of Academic Year 2024\u20132025. The certificate, dated January 14, 2025, recognizes the academic performance and dedication I demonstrated in the course and was signed by Prof. Jaser Joy D. Placeros, LPT, MAEd, the course instructor.",
+  d:"The course developed my competence in selecting and using technology to support instruction, rather than treating technology as an end in itself. I was able to apply this learning during my field study deployment, where I used the classroom\u2019s interactive display, prepared presentation slides for my lessons, and encoded learners\u2019 scores in a spreadsheet. The achievement also strengthened my resolve to continue improving my digital skills, particularly in designing interactive materials and managing class records efficiently, which supports Domain 1 and Domain 5 (Assessment and Reporting) of the PPST."},
+ cert5:{c:"The class officers of the Bachelor of Secondary Education, Major in Science (A2023), Ms. Allyza Mae H. Rabe (Class President/Representative) and Mr. James Simoun Odin (Class Vice President), presented me with a Certificate of Recognition for the courage I showed in completing the First Semester of Academic Year 2024\u20132025.",
+  d:"The recognition highlighted that completing a demanding semester requires perseverance as well as the support of one\u2019s peers. Being acknowledged by my classmates reminded me of the value of collaboration and of looking out for one another in a learning community. As a future teacher, I will apply this lesson by building a classroom culture in which learners support each other and are encouraged to keep trying despite difficulty, consistent with Domain 2 (Learning Environment) and Domain 7 of the PPST."},
+ cert1:{c:"I served as Class Auditor of the Bachelor of Secondary Education, Major in Science, Batch 2023, during Academic Year 2024\u20132025. On June 10, 2025, I received a Certificate of Appreciation for my contribution, service, and dedication in this role. The certificate was given at Taguig City University and signed by the Class President/Representative, Ms. Allyza Mae H. Rabe, and the Class Vice President, Mr. James Simoun Odin.",
+  d:"The role of Class Auditor required accountability, transparency, and careful record-keeping in handling the funds and records of the class. These responsibilities parallel the tasks of a classroom teacher, who must maintain accurate and honest records of attendance, scores, and class activities. In my field study, I applied the same attention to accuracy when I checked answer sheets and recorded learners\u2019 scores. The experience strengthened my integrity and sense of service, which are central to the professional and ethical conduct expected under Domain 7 of the PPST."},
+ cert6:{c:"I served as a Learning Facilitator in the 20-day Tara, Basa! Tutoring Program, a program of the Department of Social Welfare and Development (DSWD) and the Department of Education (DepEd), held at Ricardo P. Cruz Sr. Elementary School. The Certificate of Appreciation is dated May 29, 2026 and was signed by Marieta T. Junio, Principal II of the school.",
+  d:"Tutoring young learners taught me patience, clear communication, and the importance of identifying where each learner is in his or her reading development before deciding how to help. Because learners progress at different paces, I learned to adjust my explanations and activities according to individual needs, which is the essence of Domain 3 (Diversity of Learners) of the PPST. The program also gave me early experience in establishing rapport, giving encouragement, and managing a small group of learners. These experiences prepared me for my field study deployment and continue to shape how I approach learners who need additional support."},
+ cert2:{c:"The Teaching Internship Lecture Series, entitled \u201cShaping Tomorrow\u2019s Classrooms: Creating Learner-Centered and Inclusive Learning Environments,\u201d was conducted on July 27, 2026 for teaching interns at the 5th Floor Administrative Building of Taguig City University, under the College of Innovative Learning and Teaching. The certificate was signed by the program chairs and the Dean of the College.",
+  d:"The lecture series clarified that a learner-centered and inclusive classroom begins with teachers who know their learners\u2019 needs, interests, and strengths and who plan instruction accordingly. During my deployment, I saw this principle at work when I observed differences in learning pace among sections and varied seating arrangements that influenced learners\u2019 focus. The lecture series helped me interpret these observations and reinforced that inclusion requires deliberate planning, empathy, and flexible classroom management. I will apply these ideas in my future lesson planning in line with Domains 2 and 3 of the PPST."},
+ cert9:{c:"On August 15, 2026, I attended an online masterclass session entitled \u201cHuman Body Systems (Endocrine)\u201d under the Masterclass in Teaching Essential Science High School Content (Biology). The session was organized by the Filipino Science Hub and the Philippine Normal University \u2013 Faculty of Science, Technology and Mathematics and was held from 9:00 AM to 12:30 PM (PST). The Certificate of Attendance, given on August 16, 2026, was signed by Dr. Jeffrey Camacho-Bunquin (CEO and Founder, Filipino Science Hub) and Dr. Alfons Jayson Pelgone (Associate Dean, Philippine Normal University \u2013 Faculty of Science, Technology and Mathematics).",
+  d:"The session strengthened my content knowledge of the endocrine system, a core topic in the high school Biology curriculum. A secure grasp of content is a prerequisite for effective teaching because it allows a teacher to anticipate misconceptions and to explain processes such as hormonal regulation accurately and sequentially. I plan to use everyday examples and simple visual representations when teaching this topic so that learners can connect it to their own experiences. The activity contributes to Domain 1 (Content Knowledge and Pedagogy) of the PPST."},
+ cert10:{c:"On August 22, 2026, I attended an online masterclass entitled \u201cAI-Assisted Contextualized Masterclass on Ecosystem Dynamics: Components, Interactions and Environmental Change\u201d under the Masterclass in Teaching Essential Science High School Content (Biology). It was organized by the Filipino Science Hub and the Philippine Normal University \u2013 Faculty of Science, Technology and Mathematics and was held from 9:00 AM to 12:30 PM (PST). The certificate, given on August 25, 2026, was signed by Dr. Jeffrey Camacho-Bunquin and Dr. Alfons Jayson Pelgone.",
+  d:"The masterclass connected content on ecosystems with the practice of contextualizing lessons, that is, relating them to the learners\u2019 own environment, which is consistent with the curriculum contextualization expected of teachers under Domain 4 (Curriculum and Planning). It also made me aware of how artificial intelligence tools may assist teachers in planning, provided that teachers verify the accuracy of the output and remain responsible for the instructional decisions. Because of my interest in environmental science, I intend to design lessons on ecosystems that use local examples and encourage learners to evaluate environmental change and to act responsibly."},
+ cert11:{c:"On September 5, 2026, I attended an online masterclass session on \u201cGenetics\u201d under the Masterclass in Teaching Essential Science High School Content (Biology). The session was organized by the Filipino Science Hub and the Philippine Normal University \u2013 Faculty of Science, Technology and Mathematics and was held from 9:00 AM to 12:30 PM (PST). The certificate, given on September 7, 2026, was signed by Dr. Jeffrey Camacho-Bunquin and Dr. Alfons Jayson Pelgone.",
+  d:"Genetics is an abstract and vocabulary-heavy topic in which learners commonly develop misconceptions, so teachers need both a firm command of the content and effective ways of presenting it. The session refreshed my understanding of heredity and inheritance and reinforced the need for worked examples and guided problem-solving, so that learners practice reasoning rather than memorizing terms. I plan to apply these approaches when I teach Biology and to check learners\u2019 understanding step by step through formative questions, in keeping with Domains 1 and 5 of the PPST."},
+ cert7:{c:"As a Student Teacher at Taguig National High School, I served as a facilitator of the Science Quest during Science Month 2026. I received a Certificate of Appreciation dated October 5, 2026 for my dedicated service and commitment, which contributed to the organization and success of the celebration. The certificate was signed by Reema M. Pacalundo (Science Club Adviser, Grade 9 Science teacher), Camille L. De Guzman (Science Club Co-adviser, Grade 10 Science teacher), Lydia H. Pasicolan (Head Teacher III, Science Department), and Nolito R. Estilles (Principal II).",
+  d:"Facilitating the Science Quest showed me that school-wide activities require planning, coordination, and teamwork among teachers, student teachers, and learners. I learned to prepare materials in advance, follow the program flow, and monitor learners so that the activity remained orderly and fair. The experience also demonstrated how games and hands-on tasks can motivate learners to engage with science content. It contributed to my development under Domain 2 (Learning Environment) and Domain 6 (Community Linkages and Professional Engagement) of the PPST, and I wish to continue developing my skills in designing engaging science activities."},
+ cert12:{c:"On October 10, 2026, I attended an online masterclass session on \u201cElectricity and Magnetism\u201d under the Masterclass in Teaching Essential Science High School Content (Physics). The session was organized by the Filipino Science Hub and the Philippine Normal University \u2013 Faculty of Science, Technology and Mathematics and was held from 9:00 AM to 12:30 PM (PST). The certificate, given on October 12, 2026, was signed by Dr. Jeffrey Camacho-Bunquin and Dr. Alfons Jayson Pelgone.",
+  d:"As a Science major, I am expected to teach across Biology, Chemistry, Physics, and Earth Science, and this session helped me address the areas of the curriculum in which I have had less teaching exposure. It reinforced that electric and magnetic phenomena are best taught through demonstrations, observable evidence, and quantitative reasoning rather than definitions alone. I will use this approach when I plan lessons in Physics and will continue to review the content independently to strengthen my mastery, as expected under Domain 1 of the PPST."},
+ cert13:{c:"On October 17, 2026, I attended an online masterclass session on \u201cWork, Energy, and Power\u201d under the Masterclass in Teaching Essential Science High School Content (Physics). The session was organized by the Filipino Science Hub and the Philippine Normal University \u2013 Faculty of Science, Technology and Mathematics and was held from 9:00 AM to 12:30 PM (PST). The certificate, given on October 19, 2026, was signed by Dr. Jeffrey Camacho-Bunquin and Dr. Alfons Jayson Pelgone.",
+  d:"The session enhanced my understanding of how work, energy, and power are related and how they can be explained through everyday situations and simple computations. It showed me the importance of presenting quantitative topics in clear, sequential steps so that learners can follow the reasoning behind each formula. I will incorporate this practice in my lesson plans, particularly in structuring worked examples and practice problems, and I will continue to attend content-focused sessions to improve my readiness for the Licensure Examination for Professional Teachers and for classroom teaching."}};
+ var pds=document.getElementById('pds');
+ if(pds)pds.querySelectorAll(':scope>.card').forEach(function(c){var im=c.querySelector('img[data-k]');if(!im||!E[im.dataset.k])return;var e=E[im.dataset.k];
+  c.querySelectorAll('.fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(!l||!f)return;
+   if(/^c\. Brief/.test(l.textContent))f.textContent=e.c;else if(/^d\. Reflection/.test(l.textContent))f.textContent=e.d})});
+ document.querySelectorAll('#app .fld').forEach(function(fl){var l=fl.querySelector(':scope>label'),f=fl.querySelector(':scope>.f');if(l&&f&&l.textContent==='Overview')f.textContent=OV});
+
+ var P=[
+ ["Classroom management (identified by my cooperating teacher as an area to develop)",
+  "1. Study positive discipline and learner-centered classroom management strategies, and the DepEd Child Protection Policy (DepEd Order No. 40, s. 2012), as the basis for managing learner behavior.\n2. Prepare a set of classroom routines, rules, and consequences that are explained clearly and, where appropriate, developed together with the learners.\n3. Observe at least two experienced teachers and document the strategies they use in managing very active or noisy sections, similar to the contrast I observed between sections during the game-based activities.\n4. Conduct micro-teaching sessions with peers and request feedback using a classroom management observation checklist.\n5. Write a short reflection after every teaching session on what worked, what did not, and what I will change.",
+  "November 2026 \u2013 March 2027, continuing through the remaining teaching requirements of the program",
+  "Consistent routines, smoother transitions between activities, and fewer disruptions during lessons. Indicator: improved classroom management ratings from my cooperating teachers and supervisors in succeeding evaluations."],
+ ["Instructional delivery and lesson planning",
+  "1. Review DepEd Order No. 42, s. 2016 (Policy Guidelines on Daily Lesson Preparation) and the Most Essential Learning Competencies in Science.\n2. Prepare detailed lesson plans with measurable objectives, aligned activities, and assessments, using an inquiry-based model such as the 5Es.\n3. Rehearse each lesson, anticipate learners\u2019 questions and misconceptions, and prepare guided practice and closing activities.\n4. Submit lesson plans for review by my Field Study adviser or cooperating teacher before teaching, and revise them according to feedback.\n5. Keep a file of lesson plans, materials, and reflections for each topic taught.",
+  "November 2026 \u2013 April 2027",
+  "Complete, well-aligned lesson plans and clearer, better-paced explanations. Indicator: lesson plans approved by my adviser or cooperating teacher with minimal revisions, and positive feedback on the clarity of my instruction."],
+ ["Time management and lesson pacing",
+  "1. Allocate specific minutes to each part of the lesson (review, motivation, discussion, activity, assessment, closure) in every lesson plan.\n2. Use a timer during micro-teaching and actual lessons to monitor pacing, and prepare a shorter alternative activity in case time runs short.\n3. Prepare a weekly schedule that gives priority to teaching tasks, checking of papers, recording, and preparation of materials, so that these tasks do not compete with one another.\n4. Review my pacing at the end of each lesson and adjust the next plan accordingly.",
+  "November 2026 \u2013 March 2027",
+  "Lessons are completed within the allotted time without rushing the closing and assessment. Indicator: lessons finishing within the scheduled period in at least most observed sessions."],
+ ["Communication skills in the classroom",
+  "1. Practice giving clear, step-by-step instructions and checking for understanding before learners begin a task.\n2. Prepare higher-order questions in advance, using Bloom\u2019s revised taxonomy, and practice allowing wait time before calling on learners.\n3. Record selected micro-teaching sessions and review them to improve voice projection, pacing of speech, and clarity.\n4. Use English and Filipino appropriately to ensure that learners understand scientific terms and explanations.\n5. Attend at least one seminar or webinar on effective classroom communication.",
+  "December 2026 \u2013 May 2027",
+  "Clearer instructions, more purposeful questioning, and greater learner participation. Indicator: fewer repeated instructions in my lessons and a wider range of learners responding to questions."],
+ ["Handling diverse learner needs and classroom situations (identified by my cooperating teacher)",
+  "1. Study differentiated instruction and the principles of inclusive education, building on the Teaching Internship Lecture Series and my experience in the Tara, Basa! Tutoring Program.\n2. Gather information on learners\u2019 readiness and interests through short diagnostic questions or observation before planning a lesson.\n3. Prepare tiered or alternative activities and use peer tutoring or small-group support for learners who need additional help.\n4. Consult my cooperating teacher or guidance personnel about appropriate support for learners with specific needs.\n5. Record the situations I encounter and how they were handled, for use in my reflections.",
+  "December 2026 \u2013 June 2027",
+  "Lessons that provide appropriate support and challenge to learners of different abilities. Indicator: lesson plans that include differentiated activities and feedback from my mentors on how I respond to learners\u2019 needs."],
+ ["Assessment and reporting",
+  "1. Study DepEd Order No. 8, s. 2015 (Policy Guidelines on Classroom Assessment for the K to 12 Basic Education Program), including formative and summative assessment and grade computation.\n2. Practice preparing a table of specifications and writing test items aligned with learning competencies at different cognitive levels.\n3. Perform simple item analysis on tests I help to administer, and use the results to plan re-teaching.\n4. Maintain accurate class records using a spreadsheet and double-check all scores before reporting.",
+  "January \u2013 May 2027",
+  "Valid and well-aligned assessments and accurate records. Indicator: tests aligned with competencies and error-free class records verified by my cooperating teacher."],
+ ["Mastery of Science content across all areas",
+  "1. Review the Science curriculum guides for Grades 7 to 10 and the Senior High School core Science subjects, giving priority to Physics, Chemistry, and Earth Science.\n2. Study standard references and solve practice problems for each topic, and make summary notes and concept maps.\n3. Attend further content-focused masterclasses, such as those of the Filipino Science Hub and the Philippine Normal University.\n4. Take timed practice tests in General Education, Professional Education, and the Science specialization in preparation for the Licensure Examination for Professional Teachers (LPT).",
+  "November 2026 until the LPT; at least one structured review session each week",
+  "Stronger command of Science content and readiness for the LPT. Indicator: improved scores in practice tests and the ability to explain core concepts without difficulty."],
+ ["Integration of technology and development of instructional materials",
+  "1. Build an organized collection of slides, worksheets, quizzes, and visual aids aligned with the Science competencies I will teach.\n2. Learn and practice using interactive display features and free simulation and quiz tools to make lessons more interactive.\n3. Evaluate each material for accuracy, readability, and appropriateness before use, and ask my mentors for feedback.\n4. Improve my spreadsheet skills for recording and analyzing learners\u2019 performance.",
+  "November 2026 \u2013 June 2027",
+  "A ready-to-use portfolio of quality, curriculum-aligned materials. Indicator: at least one new or improved material prepared for each topic I teach."],
+ ["Continuing professional development, research, and graduate studies",
+  "1. Attend at least one professional development activity, such as a seminar, webinar, or masterclass, each month and keep the certificates and reflections in my portfolio.\n2. Keep a reflective teaching journal and update this e-portfolio at the end of every field study or practicum experience.\n3. Review my undergraduate thesis on Lemna minor L. (duckweed) bio-barriers and explore how research in environmental science can be developed into classroom investigations.\n4. After passing the LPT and gaining teaching experience, explore graduate programs in Science education.",
+  "Ongoing from November 2026; graduate studies to be explored after licensure",
+  "Continuous professional growth as an evidence-based, reflective Science teacher. Indicator: a regularly updated portfolio, a record of attended activities, and a defined plan for graduate studies."]
+ ];
+ var rows=document.getElementById('rows');
+ if(rows&&typeof planCard==='function'){rows.innerHTML='';
+  P.forEach(function(r){var t=document.createElement('div');t.innerHTML=planCard();var c=t.firstElementChild,fs=c.querySelectorAll('.f');for(var i=0;i<4;i++)fs[i].textContent=r[i];rows.appendChild(c)});
+  if(!document.getElementById('plannote'))rows.insertAdjacentHTML('beforebegin','<p class="note ent" id="plannote"><b>Basis of the plan:</b> This Professional Growth Action Plan is based on my cooperating teacher\u2019s evaluation during my deployment at Taguig National High School, which rated my performance at 95 (Very Satisfactory) and noted my positive attitude, willingness to learn, responsibility, professionalism, initiative, and openness to feedback. The same evaluation identified the following areas for improvement: confidence in classroom management, instructional delivery, time management, and communication skills, and more experience in handling diverse learner needs and classroom situations. The plan also draws on my own daily reflections and is aligned with the Philippine Professional Standards for Teachers (PPST). Timelines are targets that I will review and adjust each term.</p>')}
+})();
+
+(function(){ // make the portfolio read-only
+ document.querySelectorAll('[contenteditable]').forEach(function(el){el.removeAttribute('contenteditable')});
+ document.querySelectorAll('input[type=file]').forEach(function(i){i.remove()});
+ document.querySelectorAll('label.btn').forEach(function(l){l.remove()});
+ document.querySelectorAll('[data-addf],[data-add],[data-addwk],[data-del],.x,[data-padj],.addf').forEach(function(el){el.remove()});
+ document.querySelectorAll('.cf').forEach(function(el){if(!el.querySelector('.f')||!el.querySelector('.f').textContent.trim())el.remove()});
+ // hide empty fields and empty photo areas
+ document.querySelectorAll('#app .fld').forEach(function(fl){if(fl.classList.contains('cvf'))return;
+  var ph=fl.querySelector(':scope>.photos'),f=fl.querySelector(':scope>.f');
+  if(ph&&!ph.querySelector('figure'))ph.remove();
+  if(f&&!f.textContent.trim()&&!fl.querySelector('figure,.pp'))fl.style.display='none';
+  if(!f&&!fl.querySelector('figure,.pp,.cvbox,.chips,.days'))fl.style.display='none'});
+ document.querySelectorAll('.apps li .photos').forEach(function(p){if(!p.querySelector('figure'))p.remove()});
+ document.body.classList.add('ro');
+ var N=document.querySelector('.note.sched');
+ document.addEventListener('click',function(e){if(e.target.closest('[data-att]')){e.stopImmediatePropagation();e.preventDefault()}},true);
+})();
+</script>
+</body>
+</html>
